@@ -23,5 +23,4 @@ npm-debug.log
 _process/
 .scss/
 temp/
-build/
 ngrok

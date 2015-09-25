@@ -2,7 +2,7 @@
   "name": "joshuar-has-a-website",
   "version": "0.0.1",
   "description": "",
-  "main": "app/main.js",
+  "main": "server.js",
   "scripts": {
     "dev": "webpack-dev-server --watch --inline --devtool eval --progress --colors --hot --content-base build/",
     "deploy": "NODE_ENV=production webpack -p",

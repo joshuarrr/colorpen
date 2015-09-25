@@ -43,7 +43,14 @@ var SampleApp = function() {
         }
 
         //  Local cache for static content.
-        self.zcache['index.html'] = fs.readFileSync('./index.html');
+        self.zcache['bundle.js'] = fs.readFileSync('./build/bundle.js');
+        self.zcache['1.bundle.js'] = fs.readFileSync('./build/1.bundle.js');
+        self.zcache['158bbdd541296bd47297484490f0fe96.jpg'] = fs.readFileSync('./build/158bbdd541296bd47297484490f0fe96.jpg');
+        self.zcache['2.bundle.js'] = fs.readFileSync('./build/2.bundle.js');
+        self.zcache['bundle.js'] = fs.readFileSync('./build/bundle.js');
+        self.zcache['favicon.ico'] = fs.readFileSync('./build/favicon.ico');
+        self.zcache['favicon.png'] = fs.readFileSync('./build/favicon.png');
+        self.zcache['index.html'] = fs.readFileSync('./build/index.html');
     };
 
 
@@ -104,6 +111,14 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
         };
+
+        Object.keys(self.zcache).forEach(function(assetName) {
+            if (assetName !== 'index.html') {
+                self.routes['/' + assetName] = function(req, res) {
+                    res.send(self.cache_get(assetName));
+                };
+            }
+        });
     };
 
 
