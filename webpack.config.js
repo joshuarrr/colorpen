@@ -33,7 +33,9 @@ var config = {
     },
     context: __dirname,
     entry: {
-        app: ['webpack/hot/dev-server?http://localhost:8080', './app/main.js']
+        app: process.env.NODE_ENV === 'production' ?
+            ['./app/main.js'] :
+            ['webpack/hot/dev-server?http://localhost:8080', './app/main.js']
     },
     output: {
         publicPath: '/',
