@@ -47,30 +47,32 @@ var config = {
     },
     module: {
         noParse: [],
-        loaders: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
-            exclude: [node_modules_dir]
-        }, {
-            test: /\.jsx$/,
-            loader: 'react-hot-loader!babel-loader',
-            exclude: [node_modules_dir]
-        }, {
-            test: /\.scss$/,
-            loader: 'style!css!sass?outputStyle=expanded&' +
-            'includePaths[]=' +
-                (path.resolve(__dirname, './node_modules', './app/scss'))
-        }, {
-            test: /\.css$/,
-            loader: 'style-loader!css-loader!postcss-loader'
-        }, {
-            test: /\.(png|jpeg|woff|woff2|eot|ttf)$/,
-            loader: 'url-loader?limit=8192'
-        },
-        {
-            test: /\.(svg)$/,
-            loader: 'file-loader'
-        }]
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: [node_modules_dir]
+            }, {
+                test: /\.jsx$/,
+                loader: 'react-hot-loader!babel-loader',
+                exclude: [node_modules_dir]
+            }, {
+                test: /\.scss$/,
+                loader: 'style!css!sass?outputStyle=expanded&' +
+                'includePaths[]=' +
+                    (path.resolve(__dirname, './node_modules', './app/scss'))
+            }, {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader!postcss-loader'
+            }, {
+                test: /\.(png|jpeg|woff|woff2|eot|ttf)$/,
+                loader: 'url-loader?limit=8192'
+            },
+            {
+                test: /\.svg$/,
+                loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+            }
+        ]
     },
     postcss: function () {
         // The context of this function is the webpack loader-context
