@@ -64,8 +64,12 @@ var config = {
             test: /\.css$/,
             loader: 'style-loader!css-loader!postcss-loader'
         }, {
-            test: /\.(png|jpeg|woff|woff2|eot|ttf|svg)$/,
+            test: /\.(png|jpeg|woff|woff2|eot|ttf)$/,
             loader: 'url-loader?limit=8192'
+        },
+        {
+            test: /\.(svg)$/,
+            loader: 'file-loader'
         }]
     },
     postcss: function () {
