@@ -3,14 +3,7 @@
 /*! Pictures Page -----------------------------------------------------------*/
 
 .pictures .intro {
-  h1 {
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 45vh;
-    width: 100vw;
-    z-index: 5;
-  }
+
   p { display: none; }
 }
 
