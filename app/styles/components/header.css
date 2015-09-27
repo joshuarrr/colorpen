@@ -11,3 +11,21 @@
     height: calc($header-height * 2);
   }
 }
+
+/* Headroom - Hide the header on scroll */
+.headroom {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: transform 200ms linear;
+  z-index: 2;
+}
+
+.headroom--pinned {
+  transform: translateY(0%);
+}
+
+.headroom--unpinned {
+  transform: translateY(-150%);
+}

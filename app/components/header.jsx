@@ -3,6 +3,7 @@ import VelocityTransitionGroup from 'VelocityTransitionGroup';
 import Velocity from 'VelocityTransitionGroup';
 var MediaQuery = require('react-responsive');
 var Waypoint = require('react-waypoint');
+var Headroom = require('react-headroom');
 import 'velocity-animate';
 import Nav from './nav.jsx';
 import Logo from './logo.jsx';
@@ -31,21 +32,23 @@ var Header = React.createClass({
   render: function() {
     // console.log('header render, isNavShowing = ' + store.isNavShowing);
     return (
-      <header className={ this.props.class }>
-        {/* Animate the Logo */}
-        <VelocityTransitionGroup
-          className='logo-wrap'
-          appear={{scale: [1, .9], opacity: [1, 0]}}
-          enter="transition.fadeIn"
-          enterOptions={{delay: 300}}
-          defaults={{duration: 1000}}
-          ref='logoTransition'
-        >
-          <Logo />
-        </VelocityTransitionGroup>
-        <NavToggle />
-        <Nav mq={this.props.mq} />
-      </header>
+      <Headroom disableInlineStyles >
+        <header className={ this.props.class }>
+          {/* Animate the Logo */}
+          <VelocityTransitionGroup
+            className='logo-wrap'
+            appear={{scale: [1, .9], opacity: [1, 0]}}
+            enter="transition.fadeIn"
+            enterOptions={{delay: 300}}
+            defaults={{duration: 1000}}
+            ref='logoTransition'
+          >
+            <Logo />
+          </VelocityTransitionGroup>
+          <NavToggle />
+          <Nav mq={this.props.mq} />
+        </header>
+      </Headroom>
     );
   }
 });
