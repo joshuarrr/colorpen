@@ -32,7 +32,11 @@ var Header = React.createClass({
   render: function() {
     // console.log('header render, isNavShowing = ' + store.isNavShowing);
     return (
-      <Headroom disableInlineStyles >
+      <Headroom
+        disableInlineStyles
+        upTolerance={ 20 }
+        downTolerance={ 10 }
+      >
         <header className={ this.props.class }>
           {/* Animate the Logo */}
           <VelocityTransitionGroup
