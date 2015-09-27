@@ -77,21 +77,17 @@ var App = React.createClass({
     store.register(() => this.forceUpdate());
   },
 
-  hideHeader: function() {
-    store.isNavShowing = false;
-    store.register(() => this.forceUpdate());
+  toggleHeader() {
+    store.isNavShowing = !store.isNavShowing;
   },
 
-  showHeader: function() {
-    if (store.isInifigramming) {
-    } else {
-      store.isNavShowing = true;
-      store.register(() => this.forceUpdate());
-    }
+  toggleNav() {
+    store.isNavExpanded = !store.isNavExpanded;
   },
 
   render() {
     var isExpanded = store.isNavExpanded ? ' nav-is-expanded' : ' nav-not-expanded';
+    var isHeaderShowing = store.isNavShowing ? ' show-header' : ' hide-header'
     var colophonIsShowing = store.isColophonShowing ? ' show-colophon' : '';
 
     return (
@@ -112,9 +108,15 @@ var App = React.createClass({
           component='span'
           className='mq-wrap'
           key={'mq-desktop'}
-          minDeviceWidth={769} >
-          <Header class='header desktop' mq='desktop' />
-          <div className='header-toggle' onMouseOver={ this.showHeader } />
+          minDeviceWidth={ 769 } >
+          <div className={ 'header-wrap' + isHeaderShowing } >
+            <Header class='header desktop' mq='desktop' />
+          </div>
+          <div
+            className='header-toggle'
+            onMouseEnter={ this.toggleHeader }
+            onMouseLeave={ this.toggleHeader }
+            onClick={ this.toggleNav } />
           <Main mq='desktop' />
         </MediaQuery>
         <Colophon />

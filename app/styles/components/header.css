@@ -20,17 +20,23 @@
   top: 0;
   transition: transform 200ms linear;
   z-index: 5;
-  pointer-events: none;
 }
 
 /* only show/hide the header when the nav is not expanded */
 .nav-not-expanded {
   .headroom--pinned {
     transform: translateY(0%);
+    pointer-events: none;
   }
 
   .headroom--unpinned {
     transform: translateY(-150%);
+  }
+
+  .show-header {
+    .headroom--unpinned {
+      transform: translateY(0%);
+    }
   }
 
   /* header toggle hotspot */
@@ -39,7 +45,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 4;
+    z-index: 5;
 
     &:hover {
       cursor: pointer;

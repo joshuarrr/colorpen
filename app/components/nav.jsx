@@ -70,14 +70,17 @@ var BlurredBackground = React.createClass({
 
 // Nav Links //
 var NavLinks = React.createClass({
-  handleClick() {
-    store.isNavExpanded = false;
-  },
+  // handleClick() {
+  //   store.isNavExpanded = false;
+  //   console.log('store.isNavExpanded = ' + store.isNavExpanded);
+  // },
 
   render: function() {
   var self = this;
-    // console.log('mobile = ' + store.isMobile);
+  var expanded = this.props.expanded;
+
     var links = navLinkList.map(function (l) {
+
       return (
         <li className="nav-item" key={l.to}>
           <Link
@@ -109,6 +112,11 @@ var Nav = React.createClass({
       }
     }
   },
+
+  handleClick() {
+    store.isNavExpanded = !store.isNavExpanded;
+  },
+
   componentDidMount() {
     window.addEventListener('keyup', this.handleKeyup);
   },
@@ -118,14 +126,17 @@ var Nav = React.createClass({
   },
 
   render() {
+    var isExpanded = store.isNavExpanded ? ' nav-is-expanded' : '';
     var isGramming = store.isInfinigramming ? " is-gramming" : "";
     var mqclass = this.props.mq;
-    var isExpanded = store.isNavExpanded ? ' nav-is-expanded' : '';
+    var self = this;
 
     return (
       <span className={'nav-wrapper' + isExpanded}>
-        <nav className={'nav ' + mqclass + isGramming + isExpanded}>
-          <NavLinks />
+        <nav
+          className={'nav ' + mqclass + isGramming + isExpanded}
+          onClick={ self.handleClick } >
+          <NavLinks expanded={isExpanded} />
         </nav>
         {
           store.isNavExpanded &&

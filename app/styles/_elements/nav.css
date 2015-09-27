@@ -47,6 +47,10 @@ $nav-links-pad-right: calc( $menu-icon-width + $menu-icon-padding );
       transform: translateY(-3.25rem);
     }
 
+/*    .nav {
+      pointer-events: auto;
+    }
+*/
     .nav-links {
       opacity: 1;
       transition: opacity $default-duration ease-out;
@@ -69,17 +73,18 @@ $nav-links-pad-right: calc( $menu-icon-width + $menu-icon-padding );
   }
 }
 
-.nav-not-expanded {
+/*.nav-not-expanded {
   .nav {
     pointer-events: none;
   }
-}
+}*/
 
 
 /* Nav Toggle */
 .nav-toggle-btn {
   @mixin align-right;
   margin-bottom: 0;
+  pointer-events: auto;
   position: fixed;
   right: 0;
   z-index: 5;
@@ -255,5 +260,12 @@ $nav-links-pad-right: calc( $menu-icon-width + $menu-icon-padding );
   .page {
     -webkit-filter: blur(5px);
     filter: url(#blur-effect);
+  }
+}
+
+
+.nav-is-expanded {
+  .page {
+    pointer-events: none;
   }
 }
