@@ -33,6 +33,7 @@ $nav-links-pad-right: calc( $menu-icon-width + $menu-icon-padding );
     vertical-align: middle;
   }
 
+
   .nav-links {
     opacity: 0;
     transition: opacity $default-duration ease-out;
@@ -67,6 +68,13 @@ $nav-links-pad-right: calc( $menu-icon-width + $menu-icon-padding );
     }
   }
 }
+
+.nav-not-expanded {
+  .nav {
+    pointer-events: none;
+  }
+}
+
 
 /* Nav Toggle */
 .nav-toggle-btn {
@@ -213,12 +221,6 @@ $nav-links-pad-right: calc( $menu-icon-width + $menu-icon-padding );
 
 /* Frosted glass nav background effect ---------------------------------------*/
 .blurred-container {
-  /* Account for the header height since the duped content doesn't have one */
-  padding-top: $header-height;
-  @media (--short-max)  {
-    padding-top: calc($header-height * 2);
-  }
-
   position: fixed;
   width: 100%;
   height: $header-height;
@@ -227,6 +229,13 @@ $nav-links-pad-right: calc( $menu-icon-width + $menu-icon-padding );
   overflow: hidden;
   z-index: 1;
   pointer-events: none;
+
+  /* Account for the header height since the duped content doesn't have one */
+  padding-top: $header-height;
+
+  @media (--short-max)  {
+    padding-top: calc($header-height * 2);
+  }
 
   &:before {
     background-color: white;

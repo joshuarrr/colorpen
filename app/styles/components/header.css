@@ -19,7 +19,8 @@
   right: 0;
   top: 0;
   transition: transform 200ms linear;
-  z-index: 2;
+  z-index: 5;
+  pointer-events: none;
 }
 
 /* only show/hide the header when the nav is not expanded */
@@ -38,7 +39,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    /*z-index: 6;*/
+    z-index: 4;
 
     &:hover {
       cursor: pointer;

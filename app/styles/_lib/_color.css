@@ -34,5 +34,6 @@ $white-90: color(white a(90%));
 $background-color: $lightester-gray;
 $header-bg: $lightest-gray;
 $nav-bg: rgba(237, 237, 237, .5);
+$nav-bg-hover: rgba(237, 237, 237, .8);
 /*$header-bg: color(black a(07%));*/
 $header-ig-bg: color(white a(80%));

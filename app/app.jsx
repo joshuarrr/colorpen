@@ -77,10 +77,6 @@ var App = React.createClass({
     store.register(() => this.forceUpdate());
   },
 
-  componentWillUpdate: function() {
-    var showWaypoints = true;
-  },
-
   hideHeader: function() {
     store.isNavShowing = false;
     store.register(() => this.forceUpdate());
@@ -92,10 +88,6 @@ var App = React.createClass({
       store.isNavShowing = true;
       store.register(() => this.forceUpdate());
     }
-  },
-
-  switchPos: function() {
-    console.log('change to fixed nav');
   },
 
   render() {
@@ -122,7 +114,7 @@ var App = React.createClass({
           key={'mq-desktop'}
           minDeviceWidth={769} >
           <Header class='header desktop' mq='desktop' />
-          <div className='header-toggle' />
+          <div className='header-toggle' onMouseOver={ this.showHeader } />
           <Main mq='desktop' />
         </MediaQuery>
         <Colophon />
