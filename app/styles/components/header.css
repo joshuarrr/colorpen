@@ -3,9 +3,10 @@
 @import '../_elements/logo.css';
 
 .header {
+  height: $header-height;
   position: relative;
   z-index: 2;
-  height: $header-height;
+
   @media (--short-max)  {
     height: calc($header-height * 2);
   }

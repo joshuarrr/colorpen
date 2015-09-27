@@ -2,6 +2,8 @@ var React = require('react');
 var Waypoint = require('react-waypoint');
 import VelocityTransitionGroup from 'VelocityTransitionGroup';
 import 'velocity-animate/velocity.ui';
+import ResponsiveContainer from '../components/ResponsiveContainer'
+import ResponsiveImage from '../components/ResponsiveImage'
 import store from '../store';
 import Loader from '../components/loader.jsx';
 import styles from '../styles/pictures.css';
@@ -11,17 +13,28 @@ var FullFrameImages = React.createClass({
   render: function() {
     return (
       <div className="full-frame-images">
-        <img className="full-frame-image" src="http://res.cloudinary.com/joshuar/image/upload/v1442210295/aro.jpg" />
-        <img className="full-frame-image" src="http://res.cloudinary.com/joshuar/image/upload/v1442210295/mask.jpg" />
-        <img className="full-frame-image" src="http://res.cloudinary.com/joshuar/image/upload/v1442210295/deepestBlue.jpg" />
-        <img className="full-frame-image" src="http://res.cloudinary.com/joshuar/image/upload/v1442210295/santa-monica.jpg" />
-        <img className="full-frame-image" src="http://res.cloudinary.com/joshuar/image/upload/v1442210295/beach.jpg" />
-        <img className="full-frame-image" src="http://res.cloudinary.com/joshuar/image/upload/v1442210295/paint.jpg" />
+            <ResponsiveContainer class='ff-image'>
+              <ResponsiveImage class={ 'full-frame-image'} src='aro.jpg' />
+            </ResponsiveContainer>
+            <ResponsiveContainer class='ff-image'>
+              <ResponsiveImage class={ 'full-frame-image'} src='mask.jpg' />
+            </ResponsiveContainer>
+            <ResponsiveContainer class='ff-image'>
+              <ResponsiveImage class={ 'full-frame-image'} src='deepestBlue.jpg' />
+            </ResponsiveContainer>
+            <ResponsiveContainer class='ff-image'>
+              <ResponsiveImage class={ 'full-frame-image'} src='santa-monica.jpg' />
+            </ResponsiveContainer>
+            <ResponsiveContainer class='ff-image'>
+              <ResponsiveImage class={ 'full-frame-image'} src='beach.jpg' />
+            </ResponsiveContainer>
+            <ResponsiveContainer class='ff-image'>
+              <ResponsiveImage class={ 'full-frame-image'} src='paint.jpg' />
+            </ResponsiveContainer>
       </div>
     );
   }
 });
-
 
 // Number of images to fetch per request
 var count = '1';
