@@ -3,9 +3,9 @@ import { Link, RouteHandler } from 'react-router';
 import navLinkList from '../data/nav_links.js';
 import store from '../store';
 
+
 // Blurred Background //
 var BlurredBackground = React.createClass({
-
   getInitialState: function() {
     return {
       scrollPos: window.scrollY,
@@ -60,12 +60,13 @@ var BlurredBackground = React.createClass({
   },
 
   render: function() {
-    var navState = this.state.mounted ? ' is-expanded' : '';
+    var navState = this.state.mounted ? ' nav-is-expanded' : '';
     return (
       <div className={'blurred-container' + navState} />
     );
   }
 });
+
 
 // Nav Links //
 var NavLinks = React.createClass({
@@ -98,6 +99,7 @@ var NavLinks = React.createClass({
   }
 });
 
+
 // Primary Nav //
 var Nav = React.createClass({
   handleKeyup: function(e) {
@@ -118,7 +120,7 @@ var Nav = React.createClass({
   render() {
     var isGramming = store.isInfinigramming ? " is-gramming" : "";
     var mqclass = this.props.mq;
-    var isExpanded = store.isNavExpanded ? ' is-expanded' : '';
+    var isExpanded = store.isNavExpanded ? ' nav-is-expanded' : '';
 
     return (
       <span className={'nav-wrapper' + isExpanded}>
@@ -133,5 +135,6 @@ var Nav = React.createClass({
     )
   }
 });
+
 
 module.exports = Nav;

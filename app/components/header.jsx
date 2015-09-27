@@ -9,14 +9,15 @@ import Nav from './nav.jsx';
 import Logo from './logo.jsx';
 import store from '../store';
 
+
+// Nav Toggle //
 var NavToggle = React.createClass({
   toggleNav() {
     store.isNavExpanded = !store.isNavExpanded;
-    // console.log('After toggle, isNavShowing = ' + store.isNavShowing);
   },
 
   render: function() {
-    var isExpanded = store.isNavExpanded ? " is-expanded" : "";
+    var isExpanded = store.isNavExpanded ? " nav-is-expanded" : "";
     return (
       <button className='nav-toggle-btn' onClick={this.toggleNav}>
         <span className={'nav-toggle' + isExpanded} >
@@ -27,10 +28,10 @@ var NavToggle = React.createClass({
   }
 });
 
-var Header = React.createClass({
 
+// Header //
+var Header = React.createClass({
   render: function() {
-    // console.log('header render, isNavShowing = ' + store.isNavShowing);
     return (
       <Headroom
         disableInlineStyles
@@ -38,7 +39,6 @@ var Header = React.createClass({
         downTolerance={ 10 }
       >
         <header className={ this.props.class }>
-          {/* Animate the Logo */}
           <VelocityTransitionGroup
             className='logo-wrap'
             appear={{scale: [1, .9], opacity: [1, 0]}}
@@ -56,5 +56,6 @@ var Header = React.createClass({
     );
   }
 });
+
 
 export default Header;

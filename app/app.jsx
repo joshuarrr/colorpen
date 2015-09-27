@@ -5,8 +5,8 @@ import Header from './components/header.jsx';
 import { Link, RouteHandler } from 'react-router';
 import store from './store';
 require('./styles/app.css');
-
 require('file?name=favicon.png!./favicon.png');
+
 
 // Pages //
 var Main = React.createClass({
@@ -18,6 +18,7 @@ var Main = React.createClass({
 });
 
 
+// Colophon //
 var Colophon = React.createClass({
   handleKeyup: function(e) {
     if (!store.isNavExpanded && store.isColophonShowing) {
@@ -69,6 +70,7 @@ var Colophon = React.createClass({
   }
 });
 
+
 // Main App //
 var App = React.createClass({
   componentDidMount: function() {
@@ -82,16 +84,13 @@ var App = React.createClass({
   hideHeader: function() {
     store.isNavShowing = false;
     store.register(() => this.forceUpdate());
-    // console.log('(hideHeader) isNavShowing = ' + store.isNavShowing);
   },
 
   showHeader: function() {
     if (store.isInifigramming) {
-      // console.log('(showHeader) Inifigramming. isNavShowing = ' + store.isNavShowing);
     } else {
       store.isNavShowing = true;
       store.register(() => this.forceUpdate());
-      // console.log('(showHeader) Not infinigramming. isNavShowing = ' + store.isNavShowing);
     }
   },
 
@@ -100,38 +99,37 @@ var App = React.createClass({
   },
 
   render() {
-    var isExpanded = store.isNavExpanded ? ' is-expanded' : '';
+    var isExpanded = store.isNavExpanded ? ' nav-is-expanded' : ' nav-not-expanded';
     var colophonIsShowing = store.isColophonShowing ? ' show-colophon' : '';
 
     return (
-      <MediaQuery key={'mq'} className={'main' + isExpanded + colophonIsShowing } component='main' screen={true}>
-
-        {/* Mobile ----------------------------------------------------------*/}
+      <MediaQuery
+        key={'mq'}
+        className={'main' + isExpanded + colophonIsShowing }
+        component='main'
+        screen={true} >
         <MediaQuery
           component='span'
           className='mq-wrap'
           key={'mq-mobile'}
           maxWidth={768} and maxDeviceWidth={768} >
-          <Header class='header mobile' mq='mobile'
-        />
+          <Header class='header mobile' mq='mobile' />
           <Main mq='mobile' />
         </MediaQuery>
-
-        {/* Desktop ---------------------------------------------------------*/}
         <MediaQuery
           component='span'
           className='mq-wrap'
           key={'mq-desktop'}
-          minDeviceWidth={769}
-        >
+          minDeviceWidth={769} >
           <Header class='header desktop' mq='desktop' />
+          <div className='header-toggle' />
           <Main mq='desktop' />
         </MediaQuery>
-
         <Colophon />
       </MediaQuery>
     );
   }
 });
+
 
 export default App;

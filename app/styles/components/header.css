@@ -22,10 +22,27 @@
   z-index: 2;
 }
 
-.headroom--pinned {
-  transform: translateY(0%);
+/* only show/hide the header when the nav is not expanded */
+.nav-not-expanded {
+  .headroom--pinned {
+    transform: translateY(0%);
+  }
+
+  .headroom--unpinned {
+    transform: translateY(-150%);
+  }
+
+  /* header toggle hotspot */
+  .header-toggle {
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*z-index: 6;*/
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
-.headroom--unpinned {
-  transform: translateY(-150%);
-}

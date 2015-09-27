@@ -67,15 +67,15 @@ based on http://callmenick.com/post/animating-css-only-hamburger-menu-icons */
 }
 
 /* active state (menu open) */
-.nav-toggle.is-expanded .inner {
+.nav-toggle.nav-is-expanded .inner {
   animation: middle-hide .6s forwards;
 }
 
-.nav-toggle.is-expanded .inner:before {
+.nav-toggle.nav-is-expanded .inner:before {
   animation: top-to-x .6s forwards;
 }
 
-.nav-toggle.is-expanded .inner:after {
+.nav-toggle.nav-is-expanded .inner:after {
   animation: bottom-to-x .6s forwards;
 }
 
