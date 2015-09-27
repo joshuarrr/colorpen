@@ -35,7 +35,7 @@ var Header = React.createClass({
     return (
       <Headroom
         disableInlineStyles
-        upTolerance={ 20 }
+        upTolerance={ 15 }
         downTolerance={ 10 }
       >
         <header className={ this.props.class }>
