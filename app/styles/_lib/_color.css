@@ -1,0 +1,39 @@
+/* Reds */
+$light-red: color(#cc0033 lightness(50%));
+$red: #cc0033;
+$dark-red: color(#cc0033 lightness(30%));
+
+/* Greens */
+$green: #00813a;
+
+/* Grays */
+$lightester-gray: color(black lightness(97%));
+$lightest-gray: color(black lightness(93%));
+$lighter-gray: color(black lightness(90%));
+$light-gray: color(black lightness(85%));
+$gray: color(black lightness(70%));
+$dark-gray: color(black lightness(45%));
+$darker-gray: color(black lightness(35%));
+$darkest-gray: color(black lightness(30%));
+
+/* Transparent Black */
+$black-01: color(black a(5%));
+$black-02: color(black a(10%));
+$black-03: color(black a(15%));
+$black-04: color(black a(40%));
+$black-05: color(black a(50%));
+$black-06: color(black a(60%));
+$black-07: color(black a(70%));
+$black-08: color(black a(80%));
+$black-09: color(black a(90%));
+
+
+$white-90: color(white a(90%));
+
+/* Color Variables */
+$background-color: $lightester-gray;
+$header-bg: $lightest-gray;
+$nav-bg: rgba(237, 237, 237, .5);
+$nav-bg-hover: rgba(237, 237, 237, .8);
+/*$header-bg: color(black a(07%));*/
+$header-ig-bg: color(white a(80%));

@@ -1,0 +1,59 @@
+@import '../_lib.css';
+@import '../_elements/nav.css';
+@import '../_elements/logo.css';
+
+.header {
+  height: $header-height;
+  position: relative;
+  z-index: 2;
+
+  @media (--short-max)  {
+    height: calc($header-height * 2);
+  }
+}
+
+/* Headroom - Hide the header on scroll */
+.headroom {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: transform 200ms linear;
+  z-index: 5;
+}
+
+/* only show/hide the header when the nav is not expanded */
+.nav-not-expanded {
+  .headroom--pinned {
+    transform: translateY(0%);
+    pointer-events: none;
+  }
+
+  .headroom--unpinned {
+    transform: translateY(-150%);
+  }
+
+  .show-header {
+    .headroom--unpinned {
+      transform: translateY(0%);
+    }
+
+    .nav-toggle .inner {
+      opacity: 1;
+    }
+  }
+
+  /* header toggle hotspot */
+  .header-toggle {
+    height: $header-height;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+

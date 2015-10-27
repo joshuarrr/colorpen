@@ -1,0 +1,113 @@
+/* Colophon */
+.colophon {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+
+  .colophon-toggle {
+    position: relative;
+    perspective: 700;
+
+    .face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: all 0.5s .2s;
+    }
+
+    .front {
+        transform: rotateY(0deg);
+    }
+
+    .back {
+        transform: rotateY(180deg);
+
+        button {
+          background: $dark-gray;
+          border: 0;
+          color: $white-90;
+
+          &:hover {
+            background: $gray;
+            color: white;
+          }
+        }
+    }
+  }
+
+  button {
+    @mixin sans-serif-font .8rem, .5;
+    background: transparent;
+    color: $gray;
+    appearance: none;
+    border-radius: 50%;
+    border: $default-border;
+    bottom: 3rem;
+    height: 3rem;
+    left: 50%;
+    margin: 0;
+    padding: .8rem 1rem .6rem;
+    position: absolute;
+    text-align: center;
+    text-indent: .1rem;
+    text-rendering: geometricPrecision;
+    transition:
+      color $default-duration,
+      background-color $default-duration;
+    transform: translateX(-50%);
+    width: 3rem;
+
+    @media (--highRes) {
+      line-height: .9;
+      text-indent: 0;
+    }
+
+    &:hover {
+      background: $white-90;
+      color: $dark-gray;
+    }
+  }
+
+  .colophon-content {
+    @mixin sans-serif-font .5rem;
+    text-rendering: geometricPrecision;
+    bottom: 0;
+    display: none;
+    height: $colophon-height;
+    left: 50%;
+    overflow: auto;
+    padding: 3rem;
+    position: absolute;
+    letter-spacing: .025rem;
+    transform:
+      translateY(100%)
+      translateX(-50%);
+  }
+
+  &.expanded {
+
+    .colophon-toggle {
+      .front{
+        transform: rotateY(-180deg);
+      }
+
+      .back {
+        transform: rotateY(0deg);
+      }
+    }
+
+    button {
+      background: $white-90;
+      color: $dark-gray;
+    }
+
+    .colophon-content {
+      display: block;
+    }
+  }
+}

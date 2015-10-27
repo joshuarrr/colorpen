@@ -1,0 +1,271 @@
+@import './_lib.css';
+@import './_elements/nav-toggle.css';
+
+/*! Nav ---------------------------------------------------------------------*/
+$nav-link-padding: 1rem;
+$nav-links-margin: 1rem;
+$menu-icon-width: 24px;
+$menu-icon-padding: $grid-padding * 2;
+$nav-links-pad-right: calc( $menu-icon-width + $menu-icon-padding );
+
+.nav {
+  background-color: $nav-bg;
+  border-bottom: $default-border;
+  height: $header-height;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  transition:
+    height 1s $bounce-in,
+    background-color 1s $bounce-in;
+  width: 100%;
+  z-index: 3;
+
+  @media (--short-max)  {
+    height: calc($header-height * 2);
+  }
+
+  /* vertical centering part 1 of 2 */
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+
+  .nav-links {
+    opacity: 0;
+    transition: opacity $default-duration ease-out;
+  }
+
+  &.nav-is-expanded {
+    background-color: rgba(255, 255, 255, .85);
+    height: 100vh;
+
+    .logo {
+      transform: translateY(-3.25rem);
+    }
+
+/*    .nav {
+      pointer-events: auto;
+    }
+*/
+    .nav-links {
+      opacity: 1;
+      transition: opacity $default-duration ease-out;
+    }
+  }
+
+  &.is-gramming {
+    background-color: $header-ig-bg;
+
+    &:before {
+      background-color: transparent;
+    }
+  }
+
+  /* narrow devices */
+  &.mobile  {
+    .nav-links {
+      margin-top: 10vh;
+    }
+  }
+}
+
+/*.nav-not-expanded {
+  .nav {
+    pointer-events: none;
+  }
+}*/
+
+
+/* Nav Toggle */
+.nav-toggle-btn {
+  @mixin align-right;
+  margin-bottom: 0;
+  pointer-events: auto;
+  position: fixed;
+  right: 0;
+  z-index: 5;
+
+  /* FIXME - better toggle positioning */
+  @media (--short-max)      { top: 5vh; }
+  @media (height >= 376px)  { top: 0vh; }
+  @media (--tall)           { top: 1vh; }
+  @media (--grande)         { top: 2vh; } /* iphone 6 */
+  @media (height >= 668px)  { top: 2.1vh; }
+  @media (--venti)          { top: 2.5vh; }
+  @media (height >= 868px)  { top: 3vh; }
+  @media (--trenta)         { top: 3.2vh; }
+  @media (height >= 1400px) { top: 3.7vh; }
+}
+
+.nav-links {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  /* vertical centering part 2 of 2 */
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.nav-item {
+  @media (--short-max)  {
+    display: inline-block;
+  }
+}
+
+.nav-link {
+  @mixin mono-font 1;
+  line-height: 3;
+  padding: $nav-link-padding;
+  position: relative;
+  text-rendering: geometricPrecision;
+
+  /* override responsive font line-height */
+  @media (--laptop),
+  @media(--highRes)  {
+    line-height: 3;
+  }
+
+  &.active {
+    color: $darkest-gray;
+  }
+}
+
+/* NAV link effect */
+/* Inspired by (via http://tympanus.net/Development/CreativeLinkEffects) */
+.nav-link:before,
+.nav-link:after {
+  display: inline-block;
+  transition:
+    transform .3s,
+    opacity .3s;
+}
+
+/* set up hover states */
+.nav-link:before {
+  opacity: 0;
+  margin-right: 10px;
+  content: '[';
+  transform: translateX(20px);
+}
+
+.nav-link:after {
+  opacity: 0;
+  margin-left: 10px;
+  content: ']';
+  transform: translateX(-20px);
+}
+
+/* set up active hover state */
+.nav-link.active:before {
+  opacity: 0;
+  margin-right: 10px;
+  content: '—';
+  transform: translateX(20px);
+}
+
+.nav-link.active:after {
+  opacity: 0;
+  margin-left: 10px;
+  content: '—';
+  transform: translateX(-20px);
+}
+
+/* initial active link marker is visible */
+.nav-links .nav-link.active:after,
+.nav-links .nav-link.active:before {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+/* hide all the link markers when hovering over the nav */
+.nav-links:hover .nav-link:before {
+  opacity: 0;
+  margin-right: 10px;
+  content: '[';
+  transform: translateX(20px);
+}
+
+.nav-links:hover .nav-link:after {
+  opacity: 0;
+  margin-left: 10px;
+  content: ']';
+  transform: translateX(-20px);
+}
+
+/* hide the active link markers when hovering over the nav */
+.nav-links:hover .nav-link.active:before {
+  opacity: 0;
+  margin-right: 10px;
+  content: '—';
+  transform: translateX(20px);
+}
+
+.nav-links:hover .nav-link.active:after {
+  opacity: 0;
+  margin-left: 10px;
+  content: '—';
+  transform: translateX(-20px);
+}
+
+/* show the actively hovered link marker */
+.nav-links .nav-link:hover:before,
+.nav-links .nav-link:hover:after,
+.nav-links .nav-link:focus:before,
+.nav-links .nav-link:focus:after,
+.nav-links .nav-link.active:hover:before,
+.nav-links .nav-link.active:hover:after,
+.nav-links .nav-link.active:focus:before,
+.nav-links .nav-link.active:focus:after  {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Frosted glass nav background effect ---------------------------------------*/
+.blurred-container {
+  position: fixed;
+  width: 100%;
+  height: $header-height;
+  transition:
+    height 1s $bounce-in;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+
+  /* Account for the header height since the duped content doesn't have one */
+  padding-top: $header-height;
+
+  @media (--short-max)  {
+    padding-top: calc($header-height * 2);
+  }
+
+  &:before {
+    background-color: white;
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+  }
+
+  &.nav-is-expanded {
+    height: 100vh;
+    opacity: 1;
+  }
+
+  .page {
+    -webkit-filter: blur(5px);
+    filter: url(#blur-effect);
+  }
+}
+
+
+.nav-is-expanded {
+  .page {
+    pointer-events: none;
+  }
+}

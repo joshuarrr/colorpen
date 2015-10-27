@@ -1,0 +1,32 @@
+/*! Forms -------------------------------------------------------------------*/
+
+@import "../_lib.css";
+
+input {
+    @mixin mono-font;
+}
+
+button,
+.button {
+    @mixin mono-font;
+    appearance: none;
+    border: none;
+    border-radius: $default-radius;
+    margin-bottom: $trailer;
+    outline: 0;
+    padding: .7rem 1rem;
+    text-decoration: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+
+    &:hover {
+        background: green;
+        cursor: pointer;
+    }
+
+    &:active,
+    &:hover {
+        outline: 0;
+    }
+}

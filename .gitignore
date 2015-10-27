@@ -1,0 +1,27 @@
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+
+# OS or Editor folders
+.DS_Store
+.cache
+Thumbs.db
+
+
+# jr-xv-i
+.src/*
+node_modules
+npm-debug.log
+_process/
+.scss/
+temp/
+build/
+ngrok

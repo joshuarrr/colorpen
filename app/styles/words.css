@@ -1,0 +1,19 @@
+@import './_lib.css';
+
+/*! Words Page ---------------------------------------------------------------*/
+
+.banner {
+    float: left;
+    width: 110%;
+    line-height: 0;
+    transform: translateX(-5%);
+    overflow: hidden;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px 0 $black-01;
+    margin-bottom: 3rem;
+    transition: height .3s;
+
+    img {
+        width: 100%;
+    }
+}

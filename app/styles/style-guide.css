@@ -1,0 +1,145 @@
+@import './_lib.css';
+@import './dev-mode.css';
+
+/*! Style Guide --------------------------------------------------------------*/
+.style-guide {
+    @mixin mono-font;
+}
+
+.guide-section {
+    float: left;
+    width: 100%;
+    padding: $grid-padding;
+    border: $default-border;
+    background: $lightest-gray;
+    margin-bottom: 3rem;
+}
+
+.guide-section-title {
+    display: inline-block;
+    border-bottom: $default-border;
+    width: 100%;
+    background-color: white;
+    margin: -$grid-padding;
+    margin-bottom: $grid-padding;
+    padding: $grid-padding;
+    box-sizing: content-box;
+    }
+
+/* Typography ----------------------------------------------------------------*/
+.typography .guide-section-title {
+    margin-bottom: 0;
+}
+
+.font-stack {
+    width: 50%;
+    float: left;
+
+    &:first-of-type {
+        border-right: $default-border;
+        padding-right: $grid-padding;
+    }
+
+    &:last-of-type{
+        padding-left: $grid-padding;
+    }
+
+    &.serif .type-sample {
+        @mixin serif-font;
+    }
+}
+
+.sg-dl {
+    background-color: $lightester-gray;
+    padding: 1rem 1rem 0;
+    margin: .1rem -1.5rem 0;
+}
+
+.sg-dt {
+    font-weight: bold;
+}
+
+.sg-dt,
+.sg-dd {
+    border-bottom: $default-border;
+    margin: 0 -1rem 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+/* Dev Mode ------------------------------------------------------------------*/
+.dev-mode-toggle {
+    background-color: transparent;
+    position: absolute;
+    left: $grid-padding;
+    padding: 1rem;
+    margin: 0;
+    line-height: 0;
+    top: 1.4rem;
+
+    &:hover {
+        background-color: transparent;
+    }
+
+    .icon-gear {
+        color: $darkest-gray;
+        font-size: 2.5rem;
+        opacity: .5;
+        transition: opacity .3s;
+
+        &:hover {
+            background-color: transparent;
+            opacity: 1;
+        }
+
+        &.is-active {
+            color: $green;
+        }
+    }
+}
+
+.dev-mode-toggle-text {
+    @mixin hidden-text;
+}
+
+/* Colors --------------------------------------------------------------------*/
+.color-category,
+.color-variants {
+    float: left;
+    width: 100%;
+}
+
+.color-variant {
+    float: left;
+    margin: 0 1rem 1rem 0;
+}
+
+.color-swatch {
+    border: 5px solid white;
+    box-shadow: 0 1px 5px 0 $black-03;
+    float: left;
+    margin-bottom: $grid-padding;
+    width: 9vw;
+    height: 10vw;
+
+    &.light-red { background: $light-red; }
+    &.red { background: $red; }
+    &.dark-red { background: $dark-red; }
+
+    &.lightester-gray { background: $lightester-gray; }
+    &.lightest-gray { background: $lightest-gray; }
+    &.lighter-gray { background: $lighter-gray; }
+    &.light-gray { background: $light-gray; }
+    &.gray { background: $gray; }
+    &.dark-gray { background: $dark-gray; }
+
+    &.b1 { background: $black-01; }
+    &.b2 { background: $black-02; }
+    &.b3 { background: $black-03; }
+    &.b4 { background: $black-04; }
+    &.b5 { background: $black-05; }
+    &.b6 { background: $black-06; }
+    &.b7 { background: $black-07; }
+    &.b8 { background: $black-08; }
+    &.b9 { background: $black-09; }
+}

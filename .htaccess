@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^joshuarichey\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.joshuarichey\.com$
+RewriteRule ^/?$ "http\:\/\/joshuar\.com\/" [R=301,L]
+
+AddHandler cgi-script .py

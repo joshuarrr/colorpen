@@ -43,7 +43,12 @@ var SampleApp = function() {
         }
 
         //  Local cache for static content.
-        self.zcache['index.html'] = fs.readFileSync('./index.html');
+        self.zcache['index.html'] = fs.readFileSync('./build/index.html');
+
+        var dist = fs.readdirSync('./dist');
+        dist.forEach(function(asset) {
+            self.zcache[asset] = fs.readFileSync('./dist/' + asset);
+        });
     };
 
 
@@ -104,6 +109,14 @@ var SampleApp = function() {
             res.setHeader('Content-Type', 'text/html');
             res.send(self.cache_get('index.html') );
         };
+
+        Object.keys(self.zcache).forEach(function(assetName) {
+            if (assetName !== 'index.html') {
+                self.routes['/' + assetName] = function(req, res) {
+                    res.send(self.cache_get(assetName));
+                };
+            }
+        });
     };
 
 

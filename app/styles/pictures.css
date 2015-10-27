@@ -1,0 +1,32 @@
+@import './_lib.css';
+@import './infinigram.css';
+/*! Pictures Page -----------------------------------------------------------*/
+
+.pictures .intro {
+  h1 {
+    /*
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 21.3vh;
+    z-index: 5;
+    */
+    display: none;
+  }
+
+  p { display: none; }
+}
+
+.full-frame-images {
+  position: relative;
+}
+
+.full-frame-image {
+  width: 100vw;
+
+  img {
+    width: 100%;
+    border-bottom: 1px solid $background-color;
+    display: block;
+  }
+}

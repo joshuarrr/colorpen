@@ -1,0 +1,22 @@
+
+/* Waypoints Example*/
+.basic-example__message {
+    position: fixed;
+    z-index: 444;
+    top: 100px;
+    text-align: center;
+}
+.basic-example__spacer {
+  color: #ccc;
+  font-size: 40px;
+  line-height: 200px;
+  text-align: center;
+  height: 200px;
+}
+.basic-example {
+  border: solid 1px #cecece;
+  position: relative;
+}
+.basic-example__waypoint-line {
+  border-top: 1px dashed red;
+}

@@ -1,0 +1,61 @@
+/* Import Library */
+@import './_lib.css';
+
+/* Import Elements */
+@import './_elements.css';
+
+/* Import Components */
+@import './components/header.css';
+
+/*! App ---------------------------------------------------------------------*/
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  position: relative;
+}
+
+#root {
+  background-color: $lightest-gray;
+  min-height: 100%;
+}
+
+.main {
+  background: $background-color;
+  box-shadow:
+    0 1px 0 0 rgba(0, 0, 0, .065),
+    0 0 30px 0 rgba(0, 0, 0, .065);
+  position: relative;
+  min-height: 100vh;
+  transition:
+    transform .5s $bounce-in;
+  z-index: 1;
+
+  &.show-colophon {
+    transform: translateY(-$colophon-height);
+  }
+}
+
+/* Page */
+.page {
+  @mixin clearfix;
+  @mixin container-padding 6rem, $page-margin, 10rem;
+  z-index: 1;
+
+  @media (--short)   { padding-top: 7rem; }
+  @media (--tall)    { padding-top: 5rem; }
+  @media (--grande)  { padding-top: 7rem; }
+  @media (--venti)   { padding-top: 10rem; }
+  @media (--trenta)  { padding-top: 13rem; }
+}
+
+/* Waypoints */
+.header-waypoint {
+  background: red;
+  bottom: 0;
+  height: 1px;
+  position: absolute;
+  width: 100%;
+}
