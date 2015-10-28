@@ -1,0 +1,25 @@
+/* Grays */
+$lightester-gray: color(black lightness(97%));
+$lightest-gray: color(black lightness(93%));
+$lighter-gray: color(black lightness(90%));
+$light-gray: color(black lightness(85%));
+$gray: color(black lightness(70%));
+$dark-gray: color(black lightness(45%));
+$darker-gray: color(black lightness(35%));
+$darkest-gray: color(black lightness(30%));
+
+/* Transparent Blacks */
+$black-01: rgba(0, 0, 0, .01);
+$black-02: rgba(0, 0, 0, .02);
+$black-03: rgba(0, 0, 0, .03);
+$black-1: rgba(0, 0, 0, .1);
+$black-2: rgba(0, 0, 0, .2);
+$black-3: rgba(0, 0, 0, .3);
+
+/* Blue */
+$blue: DeepSkyBlue;
+
+$body-color: $darker-gray;
+
+$green: MediumSeaGreen;
+$dark-green: ForestGreen;

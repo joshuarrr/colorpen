@@ -1,0 +1,188 @@
+$border: 1px;
+$icon-color: gainsboro;
+$icon-size: 2rem;
+
+.color-category {
+  margin: 3rem 0 1rem;
+
+  &:first-child {
+    margin-top: 1rem;
+  }
+}
+
+.color-category-name {
+  font-weight: 700;
+}
+
+/* Colors  list*/
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  padding-left: $border;
+  padding-bottom: $border;
+}
+
+/* Color list item*/
+.color-swatch {
+  backface-visibility: hidden;
+  flex: 1 0 320px;
+  list-style-type: none;
+  margin-right: $border;
+  margin-top: $border;
+  /* mix-blend-mode: multiply; // causes mad flicker in chrome*/
+  padding: 3rem 5rem 4rem;
+  position: relative;
+  transform-origin: 50% 0%;
+  font: {
+    family: "Fira Mono", sans-serif;
+    size: 1rem;
+  }
+  height: auto;
+  line-height: 0;
+  text-rendering: GeometricPrecision;
+  transition:
+    color $duration,
+    height $duration $bounce-in;
+
+  @media screen and (min-width:960px) {
+    flex: 1 0 300px;
+  }
+
+  @media screen and (min-width:1280px) {
+    flex: 1 0 256px;
+  }
+}
+
+/* Color animate in */
+@keyframes flipIn {
+  from {
+    animation-timing-function: ease-out;
+    opacity: 0;
+    transform:
+      perspective(300px)
+      rotate3d(1, 0, 0, -180deg)
+      scale(10)
+      translate(0, -500%);
+  }
+
+  to {
+    transform:
+      perspective(300px)
+      rotate3d(1, 0, 0, 0deg)
+      scale(1)
+      translateY(0);
+  }
+}
+
+/* Color animation + stagger */
+$colorClass: "color";
+
+$i: 0;
+@for $i from 0 through 139 {
+  .color- $i {
+
+    $delay: $i * .1 +s;
+
+    /* Intro Animation */
+    animation: flipIn ease both 1s $delay;
+    /* */
+  }
+}
+
+/* Color swatch links */
+.color-swatch-link-title {
+  opacity: 0;
+  display: none;
+  margin: 0;
+  text-align: left;
+  transition:
+    opacity $duration;
+  width: 100%;
+}
+
+.swatch-link {
+  @mixin responsive-font-size 1rem, 1.5;
+  color: white;
+  font: {
+    size: 1.2rem;
+  }
+  letter-spacing: .1rem;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, .3);
+  transition:
+    background-color $duration;
+  width: 100%;
+
+  &:hover{
+    color: white;
+    cursor: pointer;
+
+    .swatch-content-wrap {
+      background-color: rgba(black, .3);
+    }
+
+    .copy-icon {
+      opacity: 1;
+    }
+  }
+}
+
+.show-names .color-name,
+.show-hex .hex-code,
+.show-hsl .hsl-code,
+.show-hsv .hsv-code {
+  opacity: 1;
+  display: inline-block;
+}
+
+/* Icons */
+.copy-icon {
+  display: inline-block;
+  height: $icon-size;
+  width: $icon-size;
+  opacity: 0;
+  padding: 0 .5rem 1.55rem 0 ;
+  position: absolute;
+  top: 3px;
+  left: -calc($icon-size + .5);
+  transition:
+    opacity $duration,
+    background-color $duration;
+
+  .svg {
+    width: 18px;
+    z-index: 5;
+
+    .path {
+      fill: white;
+    }
+  }
+
+  &.copied {
+    width: 19px;
+  }
+
+  &.copied.light,
+  &.light {
+    svg .path {
+      fill: DarkSlateGray;
+      stroke: DarkSlateGray;
+    }
+    svg .st0 {
+      fill:none
+    }
+  }
+}
+
+/* Hide the select areas needed for copy */
+.js-copytextarea {
+  font-size: 1px;
+  opacity: 0;
+}
+

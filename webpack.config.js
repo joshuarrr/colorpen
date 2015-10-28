@@ -35,7 +35,7 @@ var config = {
     entry: {
         app: process.env.NODE_ENV === 'production' ?
             ['./app/main.js'] :
-            ['webpack/hot/dev-server?http://localhost:8080', './app/main.js']
+            ['webpack/hot/dev-server?http://localhost:8090', './app/main.js']
     },
     output: {
         publicPath: '/',
@@ -43,7 +43,7 @@ var config = {
         filename: 'bundle.js'
     },
     resolve: {
-        alias: {}
+        extensions: ["", ".js", ".jsx"]
     },
     module: {
         noParse: [],
@@ -98,6 +98,9 @@ var config = {
             calc,
             autoprefixer(AUTOPREFIXER_BROWSERS)
         ];
+    },
+    eslint: {
+        configFile: ".eslintrc"
     }
 };
 

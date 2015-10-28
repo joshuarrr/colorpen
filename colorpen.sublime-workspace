@@ -399,13 +399,6 @@
 	},
 	"buffers":
 	[
-		{
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -558,8 +551,43 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/joshuar/Projects/colorpen",
+		"/Users/joshuar/Projects/colorpen/app",
+		"/Users/joshuar/Projects/colorpen/app/components",
+		"/Users/joshuar/Projects/colorpen/app/content",
+		"/Users/joshuar/Projects/colorpen/styles"
+	],
 	"file_history":
 	[
+		"/Users/joshuar/Projects/colorpen/app/components/checkbox.js",
+		"/Users/joshuar/Projects/colorpen/app/components/color.js",
+		"/Users/joshuar/Projects/colorpen/app/components/colors.js",
+		"/Users/joshuar/Projects/colorpen/app/components/colorSets.jsx",
+		"/Users/joshuar/Projects/colorpen/app/components/fullScreen.jsx",
+		"/Users/joshuar/Projects/colorpen/app/components/Header.js",
+		"/Users/joshuar/Projects/colorpen/app/components/hints.jsx",
+		"/Users/joshuar/Projects/colorpen/app/components/options.jsx",
+		"/Users/joshuar/Projects/colorpen/app/components/RepoListItem.js",
+		"/Users/joshuar/Projects/colorpen/app/components/Search.js",
+		"/Users/joshuar/Projects/colorpen/app/components/splash.jsx",
+		"/Users/joshuar/Projects/colorpen/app/content/home.jsx",
+		"/Users/joshuar/Projects/colorpen/app/app.jsx",
+		"/Users/joshuar/Projects/colorpen/app/content/not_found.jsx",
+		"/Users/joshuar/Projects/color-names/src/Router.js",
+		"/Users/joshuar/Projects/colorpen/package.json",
+		"/Users/joshuar/Projects/colorpen/build/index.html",
+		"/Users/joshuar/Projects/colorpen/index.html",
+		"/Users/joshuar/Projects/colorpen/webpack.config.js",
+		"/Users/joshuar/Projects/colorpen/app/routes.jsx",
+		"/Users/joshuar/Projects/colorpen/app/store.js",
+		"/Users/joshuar/Projects/colorpen/app/favicon.png",
+		"/Users/joshuar/Projects/colorpen/app/components/header.jsx",
+		"/Users/joshuar/Projects/colorpen/app/content/art.jsx",
+		"/Users/joshuar/Projects/colorpen/app/content/photography.jsx",
+		"/Users/joshuar/Projects/colorpen/README.md",
+		"/Users/joshuar/Projects/colorpen/server.js",
 		"/Users/joshuar/Projects/colorpen/colorpen/README.md",
 		"/Users/joshuar/Projects/color-names/src/components/color.js",
 		"/Users/joshuar/Projects/color-names/src/styles/lib/type.css",
@@ -589,7 +617,6 @@
 		"/Users/joshuar/Projects/color-names/src/data/html-colors.js",
 		"/Users/joshuar/Projects/color-names/package.json",
 		"/Users/joshuar/Projects/color-names/src/data/x11-colors.js",
-		"/Users/joshuar/Projects/color-names/src/Router.js",
 		"/Users/joshuar/Projects/color-names/node_modules/react-router/lib/components/RouteHandler.js",
 		"/Users/joshuar/Projects/color-names/node_modules/react-widgets/lib/DropdownList.js",
 		"/Users/joshuar/Projects/color-names/webpack.config.js",
@@ -661,43 +688,18 @@
 		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/js/lib/abc/mixins/observer.js",
 		"/nfs/ubuntu-joshuar/i3-release/front-end/ido-1/scss/our-team.scss",
 		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/js/def.js",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/ido-1/js/our_team/our_team_views.jsx",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/ido-1/js/our_team.bundle.js",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/js/events.shim.js",
-		"/nfs/ubuntu-joshuar/i3-release/templates/idealist.org/en/ido/head.html",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/style-guide/style-guide.html",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/green-1/js/org-intake.jsx",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/scss/base/_typography.scss",
-		"/nfs/ubuntu-joshuar/i3-release/conf/common.lomo.ini.in",
-		"/nfs/ubuntu-joshuar/i3-release/idealist/webapp/base/ido.py",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/scss/_lib/_typography.scss",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/ido-1/scss/working-here.scss",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/scss/base/_susify.scss",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/scss/modules/_dev-info.scss",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/blue-1/css/shared/base/_movement-grid.scss",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/scss/_lib/_color.scss",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/react-page-1/src/elements/PaneFlow.jsx",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/ido-1/_build/compile-css",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/scss/modules/_me-menu.scss",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/green-1/js/devmode.js",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/scss/vendor/susy/language/susy/_background.scss",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/scss/_lib/_all-lib.scss",
-		"/nfs/ubuntu-joshuar/i3-release/idealist/webapp/homepage/base.py",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/scss/vendor/susy/language/susy/_breakpoint-plugin.scss",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/scss/gen/breakpoints.scss",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/ido-1/js/working_here.bundle.js",
-		"/nfs/ubuntu-joshuar/i3-release/front-end/shared/rosetta/breakpoints.rose",
-		"/Users/joshuar/Desktop/CSS CONF NOTES"
+		"/nfs/ubuntu-joshuar/i3-release/front-end/ido-1/js/our_team/our_team_views.jsx"
 	],
 	"find":
 	{
-		"height": 33.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
 		"height": 107.0,
 		"where_history":
 		[
+			"/Users/joshuar/Projects/colorpen",
 			"/Users/joshuar/Projects/color-names",
 			"/nfs/ubuntu-joshuar/i3-release/",
 			"/nfs/ubuntu-joshuar/i3-release/front-end/",
@@ -790,6 +792,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\"let React = require('react');",
+			"import React from \"react\";",
+			"import React from \"react/addons\";",
+			"router",
+			"_",
+			"cs",
+			"src",
+			"openshift",
+			"joshua",
 			"showAni",
 			"props.ani",
 			"ani",
@@ -908,16 +919,7 @@
 			"{ ",
 			"{",
 			"\n",
-			"     ",
-			" \n",
-			"  \n",
-			"   \n",
-			"\n",
-			"rgb\\(\\d{3}[,] ?\\d{2}[,] \\d{1}\\)",
-			"rgb\\( \\d{2}[,] ?\\d{1}[,] \\d{3}\\)",
-			"rgb\\( \\d{2}[,] ?\\d{2}[,] \\d{2}\\)",
-			"rgb\\(\\d{3}[,] ?\\d{1}[,] \\d{1}\\)",
-			"rgb\\( \\d{2}[,] ?\\d{3}[,] \\d{2}\\)"
+			"     "
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -925,6 +927,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"let React = require('react');",
+			"\"import React from \"react\";",
 			"\"",
 			"colorset",
 			"\"",
@@ -1028,37 +1032,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Mono-Red Dark.tmTheme",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1119,6 +1094,30 @@
 		"selected_items":
 		[
 			[
+				"ap",
+				"app/app.jsx"
+			],
+			[
+				"index",
+				"build/index.html"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"pa",
+				"package.json"
+			],
+			[
+				"app",
+				"app/app.jsx"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
 				"color",
 				"src/styles/components/colors.css"
 			],
@@ -1147,10 +1146,6 @@
 				"src/styles/elements/checkbox.css"
 			],
 			[
-				"index",
-				"public/index.html"
-			],
-			[
 				"heade",
 				"src/components/Header.js"
 			],
@@ -1167,23 +1162,11 @@
 				"src/styles/lib/mixins.css"
 			],
 			[
-				"app",
-				"src/styles/app.css"
-			],
-			[
 				"var",
 				"src/styles/lib/vars.css"
 			],
 			[
-				"pa",
-				"package.json"
-			],
-			[
 				"pac",
-				"package.json"
-			],
-			[
-				"pack",
 				"package.json"
 			],
 			[
@@ -1621,14 +1604,6 @@
 			[
 				"jobview_vi",
 				"i3-release/idealist/webapp/listing/templates/idealist.org/en/job/view_view.html"
-			],
-			[
-				"view_v",
-				"i3-release/idealist/webapp/content/templates/idealist.org/en/job/view_view.html"
-			],
-			[
-				"listin",
-				"ido-1/scss/listings.scss"
 			]
 		],
 		"width": 0.0
@@ -1659,7 +1634,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 284.0,
+	"side_bar_width": 237.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

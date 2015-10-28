@@ -1,0 +1,51 @@
+/*! Typography --------------------------------------------------------------*/
+@import "../lib.css";
+
+/* Reset the fonts to 10px for easy rem computation; */
+html { font-size: 62.5%; }
+
+body {
+  @mixin default-font;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: $trailer;
+  font-weight: normal;
+  text-rendering: geometricPrecision;
+}
+
+/* Responsive Font Sizes and Line Heights */
+
+h1 { @mixin responsive-font-size 1.8rem, 1.7; }
+h2 { @mixin responsive-font-size 1rem; }
+h3 { @mixin responsive-font-size 1.8rem; }
+h4 { @mixin responsive-font-size 1.6rem; }
+h5 { @mixin responsive-font-size 1.6rem; }
+h6 { @mixin responsive-font-size 1.6rem; }
+
+
+hr {
+  background-color: $light-gray;
+  height: 1px;
+  margin: 0 0 1rem 0;
+  width: 100%;
+}
+
+dl {
+  color: $dark-gray;
+}
+
+dt,
+dd {
+  float: left;
+}
+
+dt {
+  clear: both;
+  color: $darker-gray;
+  margin-right: .5rem;
+}
+
+dd {
+  text-rendering: geometricPrecision;
+}

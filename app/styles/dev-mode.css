@@ -1,6 +1,0 @@
-@import './_lib.css';
-
-/* Locally scoped styles */
-:local(.devMode) {
-    background: $red;
-}

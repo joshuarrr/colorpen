@@ -1,59 +1,83 @@
-@import '../_lib.css';
-@import '../_elements/nav.css';
-@import '../_elements/logo.css';
-
-.header {
-  height: $header-height;
-  position: relative;
-  z-index: 2;
-
-  @media (--short-max)  {
-    height: calc($header-height * 2);
-  }
-}
-
-/* Headroom - Hide the header on scroll */
-.headroom {
-  left: 0;
+.site-header {
+  /*backdrop-filter: brightness(1.2) blur(10px);*/
+  background-color: $lightester-gray;
+  border-bottom: 1px solid $lightest-gray;
+  display: flex;
+  height: $header-height;;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-left: $page-margin;
+  padding-right: $page-margin;
   position: fixed;
-  right: 0;
   top: 0;
-  transition: transform 200ms linear;
-  z-index: 5;
-}
+  width: 100%;
+  z-index: 100;
 
-/* only show/hide the header when the nav is not expanded */
-.nav-not-expanded {
-  .headroom--pinned {
-    transform: translateY(0%);
-    pointer-events: none;
+  @media screen and (max-height: 468px) {
+    height: $header-height * 2;
   }
 
-  .headroom--unpinned {
-    transform: translateY(-150%);
-  }
-
-  .show-header {
-    .headroom--unpinned {
-      transform: translateY(0%);
-    }
-
-    .nav-toggle .inner {
+  &:hover {
+    .toggle {
       opacity: 1;
     }
   }
+}
 
-  /* header toggle hotspot */
-  .header-toggle {
-    height: $header-height;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 5;
+.site-title {
+  @mixin responsive-font-size 1.9rem, 2;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: .1rem;
+}
 
-    &:hover {
-      cursor: pointer;
-    }
+.site-nav {
+  display: none;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  border-bottom: 1px solid $black-1;
+  position: fixed;
+  top: 8vh;
+  z-index: 2;
+  background: rgba(255, 255, 255, .9);
+  width: 100%;
+  padding-right: 0.8rem;
+  margin-left: -1.5rem;
+  padding-left: 1.5rem;
+  height: $section-header-height;
+}
+
+.section-title {
+  font-weight: 700;
+  @mixin responsive-font-size 1.4rem, 2;
+}
+
+.section-title,
+.display-options {
+  display: inline-block;
+
+  @media screen and (min-width: 468px) {
+    width: 50%;
   }
 }
 
+.section-title {
+  margin: 0;
+  letter-spacing: .1rem;
+  width: 50vw;
+}
+
+.display-options {
+  @media screen and (min-width: 468px) {
+    margin-top: 0;
+    position: relative;
+    right: 11px;
+    text-align: right;
+    width: 100%;
+  }
+}

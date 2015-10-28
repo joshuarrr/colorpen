@@ -1,0 +1,21 @@
+/*! Transitions --------------------------------------------------------------*/
+$default-duration: .3s;
+$duration: $default-duration;
+
+$default-ease: 'ease-out';
+$ease: $default-ease;
+
+$default-property: 'all';
+$property: $default-property;
+
+$default-delay: 0;
+$delay: $default-delay;
+
+$bounce-in: cubic-bezier(0.160, 0.035, 0.240, 1.295);
+$slide-in: cubic-bezier(.87,-.41,.19,1.44);
+
+@define-mixin default-transition $property, $ease, $delay {
+    transition-property: $property;
+    transition-duration: $duration;
+    transition-timing-function: $ease;
+}
