@@ -1,7 +1,7 @@
 {
-  "name": "react-base",
+  "name": "Colorpen",
   "version": "1.0.0",
-  "description": "React Base is a minimal React.js starter site built on React Tranform Boilerplate, adding ESLint, a basic React Router implementation, and lots of PostCSS plugins.",
+  "description": "Colorpen: HTML, SVG, and CSS color names, hex codes, and rgb values.",
   "scripts": {
     "clean": "rimraf dist",
     "build:webpack": "NODE_ENV=production webpack --config webpack.config.prod.js",
@@ -13,17 +13,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/joshuarrr/react-base"
+    "url": "https://github.com/joshuarrr/colorpen"
   },
   "keywords": [
-    "react"
+    "react",
+    "HTML colors"
   ],
   "author": "Joshuar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joshuarrr/react-base/issues"
+    "url": "https://github.com/joshuarrr/colorpen/issues"
   },
-  "homepage": "https://github.com/joshuarrr/react-base",
+  "homepage": "http://colorpen.io",
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babel-core": "^5.4.7",
