@@ -16,12 +16,8 @@
 Thumbs.db
 
 
-# jr-xv-i
-.src/*
+# react-base
 node_modules
-npm-debug.log
-_process/
-.scss/
-temp/
-build/
-ngrok
+_process
+react-base.sublime-project
+react-base.sublime-workspace

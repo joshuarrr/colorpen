@@ -1,0 +1,15 @@
+/* PostCSS Browser Reporter / Stylelint */
+body:before {
+  font-family: $primary-font-family !important;
+  background: Gainsboro !important;
+  bottom: 0;
+  color: rgba(0, 0, 0, .5) !important;
+  text-shadow: none !important;
+  font-size: 13px !important;
+  line-height: 1.7 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 3rem !important;
+  text-rendering: optimizeLegibility;
+}

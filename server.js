@@ -1,13 +1,13 @@
 #!/bin/env node
 //  OpenShift sample Node application
 var express = require('express');
+var app = express();
 var fs      = require('fs');
-
 
 /**
  *  Define the sample application.
  */
-var SampleApp = function() {
+var OSServer = function() {
 
     //  Scope.
     var self = this;
@@ -43,7 +43,7 @@ var SampleApp = function() {
         }
 
         //  Local cache for static content.
-        self.zcache['index.html'] = fs.readFileSync('./build/index.html');
+        self.zcache['index.html'] = fs.readFileSync('./index.html');
 
         var dist = fs.readdirSync('./dist');
         dist.forEach(function(asset) {
@@ -126,7 +126,7 @@ var SampleApp = function() {
      */
     self.initializeServer = function() {
         self.createRoutes();
-        self.app = express.createServer();
+        self.app = express();
 
         //  Add handlers for the app (from the routes).
         for (var r in self.routes) {
@@ -166,7 +166,6 @@ var SampleApp = function() {
 /**
  *  main():  Main code.
  */
-var zapp = new SampleApp();
+var zapp = new OSServer();
 zapp.initialize();
 zapp.start();
-

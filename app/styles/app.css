@@ -1,19 +1,11 @@
-@import "lib.css";
-@import "elements.css";
-@import "components/header.css";
-@import "components/colors.css";
-@import "elements/checkbox.css";
-@import "elements/dropDown.css";
-@import "components/hints.css";
+/* App.css */
+/* These styles effect the entire domain.*/
 
-body {
-  background-color: White;
-  margin: 0;
-  @mixin responsive-font-size .8rem, 2;
-  color: $body-color;
-}
+@import "./elements/reset.css";
+@import "./elements/eslint.css";
+@import "./elements/postcss-lint.css";
 
-main {
-    margin-top: calc($header-height + $section-header-height);
-    padding: 0 $page-margin $page-margin;
+.root,
+.react-wrapper {
+  height: 100%;
 }

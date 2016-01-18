@@ -1,0 +1,72 @@
+/* Forms ---------------------------------------------------------------------*/
+input,
+textarea,
+button,
+select {
+  /* necessary to override default browser font */
+  font-family: $primary-font-family;
+}
+
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+}
+
+textarea {
+  vertical-align: top;
+  resize: none;
+}
+
+/* Remove default styling on inputs */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=search],
+input[type=tel],
+textarea {
+  /* remove Default Browser Behaviour for Firefox */
+  appearance: none;
+}
+
+/* defaultify search inputs */
+input[type="search"] {
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration {
+  appearance: none;
+}
+
+.checkbox {
+  margin: .2rem 0;
+}
+
+/*Buttons*/
+button,
+select {
+  vertical-align: baseline;
+
+  /* remove default focus outline */
+  &:active,
+  &:focus {
+    outline: none !important;
+  }
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+button:active,
+button:focus {
+  outline: none !important;
+}

@@ -1,0 +1,15 @@
+{
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "extends": "airbnb",
+  "rules": {
+    "comma-dangle": [2, "never"],
+    "react/jsx-curly-spacing": [1, "always"],
+    "no-console": [0],
+    "indent": [1, "tab"]
+  }
+}

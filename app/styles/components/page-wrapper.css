@@ -1,0 +1,19 @@
+/* Don't style the body. */
+/* body {} */
+@import "../@lib.css";
+
+.page-wrapper {
+    font-family: $primary-font-family;
+    background-color: Gainsboro;
+    overflow: auto;
+    padding: 4rem 5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+p {
+    margin-bottom: 1rem;
+}
