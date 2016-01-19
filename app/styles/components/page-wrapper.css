@@ -3,7 +3,7 @@
 @import "../@lib.css";
 
 .page-wrapper {
-    font-family: $primary-font-family;
+    font-family: $raleway;
     background-color: Gainsboro;
     overflow: auto;
     padding: 4rem 5rem;

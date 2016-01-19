@@ -1,0 +1,50 @@
+/* Toggle Container */
+.checkbox {
+  position: relative;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.checkbox-input,
+.checkbox-label {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input.checkbox-input {
+  display: none;
+}
+
+$checkbox-size: .9rem;
+
+.checkbox-label {
+  @mixin responsive-font-size .5rem, 2, .1rem;
+  padding-left: 1rem;
+
+  &:before {
+    border: 1px solid $gray;
+    border-radius: .1rem;
+    color: transparent;
+    content: "";
+    display: inline-block;
+    height: $checkbox-size;
+    margin-right: .5rem;
+    width: $checkbox-size;
+    background-color: transparent;
+    transition: background-color .4s $bounce-in,
+      border-color .4s $bounce-in;
+  }
+}
+
+.checked {
+  &:before {
+    content: "";
+    background-color: $green;
+    border-color: $dark-green;
+  }
+}
+
+.checkbox-label-text {
+  margin-right: .5rem;
+}

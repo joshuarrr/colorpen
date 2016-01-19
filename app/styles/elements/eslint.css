@@ -9,7 +9,7 @@ body > div:last-child {
   text-rendering: optimizeLegibility;
 
   > pre {
-  	font-family: $primary-font-family;
+  	font-family: $fira;
 	  overflow-wrap: break-word !important;
 	  word-wrap: break-word !important;
 	  word-break: break-word !important;

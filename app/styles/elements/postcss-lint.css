@@ -1,6 +1,6 @@
 /* PostCSS Browser Reporter / Stylelint */
 body:before {
-  font-family: $primary-font-family !important;
+  font-family: $fira !important;
   background: Gainsboro !important;
   bottom: 0;
   color: rgba(0, 0, 0, .5) !important;

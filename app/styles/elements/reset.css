@@ -1,77 +1,134 @@
-@import "../@lib.css";
-
-$box-sizing: "border-box";
-$reset-all-borders: true;
-$reset-all-margins: true;
-$reset-all-padding: true;
-
-$reset-forms: false;
-
 /* Global Reset --------------------------------------------------------------*/
 html {
-  box-sizing: $box-sizing;
-}
-
-html,
-body {
-  height: 100%;
+	box-sizing: border-box;
 }
 
 * {
-  @if $reset-all-borders == true {
-    border: 0;
-  }
-  @if $reset-all-margins == true {
-    margin: 0;
-  }
-  @if $reset-all-padding == true {
-    padding: 0;
-  }
-  box-sizing: inherit;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
 }
 
 /* Typography ---------------------------------------------------------------*/
-a {
-  text-decoration: none;
-}
-
 a:focus {
-  outline: none;
+	outline: none;
 }
 
 ul,
 ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 /* Images --------------------------------------------------------------------*/
+/* if images don't load */
 img {
-  /* In case images don't load */
-  font-style: italic;
+	font-style: italic;
 }
 
-/* Remove image link borders */
+/* no borders on image links */
 a img,
 :link img,
 :visited img {
-  border: 0;
+	border: 0;
 }
 
-@if ($reset-forms == true) {
-  @import "./reset-forms.css";
+/* Forms ---------------------------------------------------------------------*/
+/* override default browser font */
+input,
+textarea,
+button,
+select {
+	@mixin default-font;
 }
 
-
-/* Etc -----------------------------------------------------------------------*/
-
-/* Make the selection color pretty */
-::-moz-selection {
-  color: Gainsboro;
-  background: SlateGray;
+fieldset {
+	border: 0;
+	padding: 0;
 }
-::selection {
-  color: Gainsboro;
-  background: SlateGray;
+
+legend {
+	border: 0;
+	padding: 0;
+	white-space: normal;
+	*margin-left: -7px;
 }
+
+textarea {
+	vertical-align: top;
+	resize: none;
+}
+
+/* Remove default styling on inputs */
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=search],
+input[type=tel],
+textarea {
+	appearance: none; /* Remove default browser behaviour for Safari  */
+}
+
+/* defaultify search inputs */
+input[type="search"] {
+	appearance: textfield;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration {
+	appearance: none;
+}
+
+input[type=checkbox],
+input[type=radio] {
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	*height: 13px;
+	*width: 13px;
+}
+
+.checkbox {
+	margin: .2rem 0;
+}
+
+/*Buttons*/
+button,
+select {
+	vertical-align: baseline;
+
+	/* remove default focus outline */
+	&:active,
+	&:focus {
+		outline: none !important;
+	}
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] { cursor: default; }
+
+/* Remove default focus state (ff) */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+button:active,
+button:focus {
+	outline: none !important;
+}
+
+/* Make selection color pretty */
+/*::-moz-selection { color: black;  background: lighten($blue,50%); }
+::selection { color: black;  background: lighten($blue,50%); }
+*/

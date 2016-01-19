@@ -1,0 +1,39 @@
+/* TYPE */
+$base-font-size: 1rem;
+$base-line-height: 1;
+$default-font-family: 'Raleway', sans-serif;
+$raleway: 'Raleway', sans-serif;
+$fira: 'Fira Sans', sans-serif;
+
+/* MIXINS */
+/* Responsive font-sizes */
+@define-mixin responsive-font-size
+  $fs: $base-font-size,
+  $lh: $base-line-height,
+  $ls: .05rem {
+    font-size: calc($fs + .6);
+    letter-spacing: $ls;
+    line-height: calc($lh + .5);
+
+  @media (--tablet)  {
+    font-size: calc($fs + .8);
+    line-height: calc($lh + .5);
+  }
+
+  @media (--desktop) {
+    font-size: calc($fs + .9);
+    line-height: calc($lh + .5);
+  }
+
+  @media (--highRes) {
+    font-size: calc($fs + 1);
+    line-height: calc($lh + .6);
+  }
+}
+
+/* Default Font */
+@define-mixin default-font {
+  font-family: $default-font-family;
+  font-feature-settings: "liga", "clig";
+  font-variant-ligatures: common-ligatures;
+}

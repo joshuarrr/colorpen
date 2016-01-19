@@ -1,9 +1,9 @@
 /* App.css */
-/* These styles effect the entire domain.*/
-
-@import "./elements/reset.css";
-@import "./elements/eslint.css";
-@import "./elements/postcss-lint.css";
+@import "@lib.css";
+@import "@elements.css";
+@import "./components/header.css";
+@import "./components/colors.css";
+@import "./components/hints.css";
 
 .root,
 .react-wrapper {
