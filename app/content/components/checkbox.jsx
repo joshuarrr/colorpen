@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export class Checkbox extends Component {
 	static propTypes = {
 		initialChecked: React.PropTypes.bool,
-		callbackParent: React.PropTypes.function,
+		callbackParent: React.PropTypes.any,
 		id: React.PropTypes.string,
 		text: React.PropTypes.string
 	}
@@ -28,13 +28,13 @@ export class Checkbox extends Component {
 		return (
 			<div className="checkbox">
 				<label
-				className={ 'checkbox-label ' + labelStyle }
-				id={ this.props.id }
+					className={ 'checkbox-label ' + labelStyle }
+					id={ this.props.id }
 				>
 					<input
 						checked={ this.props.initialChecked }
 						id={ this.props.id }
-						onClick={ this.handleChange }
+						onChange={ this.handleChange }
 						type="checkbox"
 						className="checkbox-input"
 					/>

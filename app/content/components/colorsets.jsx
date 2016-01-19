@@ -27,19 +27,25 @@ export class ColorSets extends Component {
 		}
 
 		const colorset = config.map(function ex(group, i) {
-			const colors = group.colors.map(function gc(color) {
+			const colors = group.colors.map(function gc(color, ii) {
 				return (
 					<Color
 						color={ color.name }
 						id={ color.name }
+						key={ 'color-' + ii }
 					/>
 				);
 			});
 
 			return (
 				<li
-					className={ "color-category" } key={ 'cc-' + i }>
-					<h2 className = "color-category-name">
+					className={ "color-category" }
+					key={ 'category-' + i }
+				>
+					<h2
+						className = "color-category-name"
+						key={ 'color-category-name-' + i }
+					>
 						{ group.category }
 					</h2>
 					<ul className="colors">
