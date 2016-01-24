@@ -5,7 +5,6 @@ import { ColorSets } from './colorSets';
 
 /* Colors */
 export class Colors extends Component {
-
 	static propTypes = {
 		config:	React.PropTypes.string
 	}
@@ -14,41 +13,40 @@ export class Colors extends Component {
 		super(props);
 		this.state = {
 			namesChecked: true,
-			hexChecked: false,
+			hexChecked: true,
 			hslChecked: false,
 			hsvChecked: false
 		};
 	}
 
-	onNameChanged(newState) {
+	onNameChanged = (newState) => {
 		this.setState({ namesChecked: newState });
 	}
 
-	onHexChanged(newState) {
+	onHexChanged = (newState) => {
 		this.setState({ hexChecked: newState });
 	}
 
-	onHslChanged(newState) {
+	onHslChanged = (newState) => {
 		this.setState({ hslChecked: newState });
 	}
 
-	onHsvChanged(newState) {
+	onHsvChanged = (newState) => {
 		this.setState({ hsvChecked: newState });
 	}
 
-	render() {
+	render = () => {
 		const showNames = this.state.namesChecked ? 'show-names ' : '';
 		const showHex = this.state.hexChecked ? 'show-hex ' : '';
 		const showHsl = this.state.hslChecked ? 'show-hsl ' : '';
 		const showHsv = this.state.hsvChecked ? 'show-hsv ' : '';
 
 		const config = this.props.config;
-		console.log('colors config = ' + config);
+		console.log('config = ' + config);
 
 		return (
 			<section>
 				<header className="section-header">
-					<h1 className="section-title">{ config }</h1>
 					<div className="display-options">
 						<Checkbox
 							key="toggle-names"

@@ -16,14 +16,16 @@ export class Checkbox extends Component {
 		};
 	}
 
-	handleChange() {
+  // this.handleChange = this.handleChange.bind(this);
+	handleChange = () => {
 		const newState = !this.state.checked;
 		this.setState({ checked: newState });
 		this.props.callbackParent(newState); // hey parent, I"ve changed!
 	}
 
-	render() {
+	render = () => {
 		const labelStyle = this.state.checked ? ' checked' : '';
+		// console.log('this.state.checked = ' + this.state.checked);
 
 		return (
 			<div className="checkbox">

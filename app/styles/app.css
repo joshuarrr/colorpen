@@ -9,3 +9,15 @@
 .react-wrapper {
   height: 100%;
 }
+
+body {
+  background-color: White;
+  margin: 0;
+  @mixin responsive-font-size .8rem, 2;
+  color: $body-color;
+}
+
+main {
+    margin-top: calc($header-height + $section-header-height);
+    padding: 0 $page-margin $page-margin;
+}

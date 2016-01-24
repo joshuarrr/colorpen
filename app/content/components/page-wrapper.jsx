@@ -6,7 +6,7 @@ export class PageWrapper extends Component {
 	static propTypes = {
 		children: React.PropTypes.node
 	}
-	render() {
+	render = () => {
 		return (
 			<div className="page-wrapper">
 				<Helmet titleTemplate="%s | Colorpen" />

@@ -10,8 +10,8 @@ export class ColorSets extends Component {
 		config: React.PropTypes.string
 	}
 
-	render() {
-		console.log('colorsets config = ' + this.props.config);
+	render = () => {
+		// console.log('colorsets config = ' + this.props.config);
 		let config = this.props.config;
 
 		if (config === 'SVG Colors') {
@@ -35,7 +35,7 @@ export class ColorSets extends Component {
 						key={ 'color-' + ii }
 					/>
 				);
-			});
+			}, this);
 
 			return (
 				<li

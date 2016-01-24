@@ -1,5 +1,6 @@
 /* eslint react/prop-types: 0 */
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import tinyColor from 'tinyColor2';
 
 /* Color */
@@ -13,17 +14,17 @@ export class Color extends Component {
 		};
 	}
 
-	setValue(type) {
+	setValue = (type) => {
 		this.setState({ value: type });
 	}
 
-	handleClick() {
-		const copyTextarea = React.findDOMNode(this.refs.colorText);
+	handleClick = () => {
+		const copyTextarea = ReactDOM.findDOMNode(this.refs.colorText);
 		copyTextarea.select();
 
 		const isClicked = true;
 		this.setState({ clicked: isClicked });
-		// console.log('clicked ' + this.state.clicked);
+		console.log('clicked ' + this.state.clicked);
 
 		try {
 			const successful = document.execCommand('copy');
@@ -34,12 +35,12 @@ export class Color extends Component {
 		}
 	}
 
-	handleMouseLeave() {
+	handleMouseLeave = () => {
 		const isClicked = false;
 		this.setState({ clicked: isClicked });
 	}
 
-	render() {
+	render = () => {
 		const clickedClass = this.state.clicked ? ' clicked' : '';
 		const value = this.state.value;
 		const swatchColor = {

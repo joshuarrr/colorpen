@@ -11,6 +11,7 @@
     "react/jsx-curly-spacing": [1, "always"],
     "no-console": [0],
     "indent": [1, "tab"],
-    "no-unused-vars": [0]
+    "no-unused-vars": [0],
+    "quotes": [1]
   }
 }
