@@ -9,12 +9,27 @@ require('../styles/app.css');
 export class Home extends Component {
 	mixins: [ PureRenderMixin ]
 
-	render() {
-		const config = 'SVG Colors';
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			config: 'SVG Colors'
+		};
+	}
+
+	config = (newValue) => {
+		const config = newValue;
+		console.log('App Newvalue= ' + newValue);
+		if (this.state.config !== newValue) {
+			this.setState({ config: newValue });
+		}
+	}
+
+	render = () => {
 		return (
 			<div className="Home">
-				<Header />
-				<Colors config={ config } />
+				<Header callbackParent={ this.config } />
+				<Colors config={ this.state.config } />
 			</div>
 		);
 	}

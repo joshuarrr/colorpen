@@ -36,15 +36,19 @@ export class Header extends Component {
 		};
 	}
 
-	componentDidUpdate(prevProps, prevState) {
+	componentDidUpdate = (prevProps, prevState) => {
 		const newValue = this.state.value;
-		console.log("this.state.value = " + this.state.value);
+		console.log("header newValue = " + this.state.value);
+
 		return (
 			this.props.callbackParent(newValue)
 		);
 	}
 
 	render = () => {
+		// const config = 'SVG Colors';
+		console.log('Header state = ' + this.state.value);
+
     const colorSets = collections.map(function gc(collection) {
       return (
         collection.name

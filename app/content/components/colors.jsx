@@ -42,7 +42,7 @@ export class Colors extends Component {
 		const showHsv = this.state.hsvChecked ? 'show-hsv ' : '';
 
 		const config = this.props.config;
-		console.log('config = ' + config);
+		console.log('colors.jsx config = ' + config);
 
 		return (
 			<section>
