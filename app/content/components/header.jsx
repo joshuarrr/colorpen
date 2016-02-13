@@ -38,36 +38,36 @@ export class Header extends Component {
 
 	componentDidUpdate = (prevProps, prevState) => {
 		const newValue = this.state.value;
-		console.log("header newValue = " + this.state.value);
+		console.log('header newValue = ' + this.state.value);
 
 		return (
 			this.props.callbackParent(newValue)
-		);
+			);
 	}
 
 	render = () => {
 		// const config = 'SVG Colors';
 		console.log('Header state = ' + this.state.value);
 
-    const colorSets = collections.map(function gc(collection) {
-      return (
-        collection.name
-      );
-    });
+		const colorSets = collections.map(function gc(collection) {
+			return (
+				collection.name
+				);
+		});
 
 		return (
-			<header className={ "site-header" }>
+			<header className={ 'site-header' }>
 				<h1 className="site-title">
 					Colorpen
 				</h1>
 				<DropdownList
-          data={ colorSets }
-          value={ this.state.value }
-          onChange={
-            value => this.setState({ value })
-          }
-        />
+					data={ colorSets }
+					value={ this.state.value }
+					onChange={
+						value => this.setState({ value })
+					}
+				/>
 			</header>
-		);
+			);
+		}
 	}
-}

@@ -7,24 +7,7 @@
 
 .rw-dropdownlist {
   position: relative;
-  min-width: 15rem;
   border-radius: .3rem;
-}
-
-.rw-popup {
-  /*box-shadow: 0 1px 1px 0 $black-1;*/
-  background-color: rgba(255, 255, 255, .95);
-  border: 1px solid $black-1;
-  border-top: 0;
-}
-
-.rw-popup-container {
-  position: absolute;
-  top: 100%;
-  z-index: 10000;
-  left: 0;
-  width: 100%;
-  margin-top: -3px;
 }
 
 .rw-sr {
@@ -38,24 +21,21 @@
   border: 0;
 }
 
-.rw-widget {
-  width: 17rem;
-}
-
 .rw-input {
-  background-color: white;
-  border: 1px solid $black-1;
+  border: 1px solid transparent;
   border-radius: .3rem;
-  padding: 0 3.5rem 0 1rem;
+  padding: .6rem 3rem .6rem 1rem;
   position: relative;
-  transition: border-color .3s,
-    background-color .3s;
+  transition: 
+    border-color .3s .2s,
+    background-color .3s .2s,
+    color .3s .2s;
   user-select: none;
   z-index: 1;
 
   &:after {
-    border-right: 1.5px solid  $body-color;
-    border-bottom: 1.5px solid  $body-color;
+    border-right: 1.5px solid $body-color;
+    border-bottom: 1.5px solid $body-color;
     color: transparent;
     content: "";
     height: .6rem;
@@ -63,6 +43,7 @@
     position: absolute;
     right: 1.5rem;
     top: 46%;
+    transition: border-color .3s;    
     transform: translateY(-55%)
       rotate(45deg);
     width: .6rem;
@@ -70,29 +51,63 @@
 
   &:hover {
     cursor: pointer;
+    background-color: rgba(255, 255, 255, .5);
+    border: 1px solid $black-1;
+
+    &:after {
+      border-color: $blue;
+    }
   }
 }
 
+.rw-popup {
+  /*box-shadow: 0 1px 1px 0 $black-1;*/
+  background-color: rgba(255, 255, 255, .95);
+  border: 1px solid $black-1;
+  border-bottom-right-radius: .3rem;
+  border-bottom-left-radius: .3rem;
+  width: 100%;
+  border-top: 0;
+}
+
+.rw-popup-container {
+  position: absolute;
+  top: 100%;
+  z-index: 10000;
+  left: 0;
+  width: 100%;
+}
+
 .rw-list-option {
-  @mixin responsive-font-size .6rem, .6;
+  /*@mixin responsive-font-size .6rem, .6;*/
   background-color: transparent;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   letter-spacing: .05rem;
-  padding: 1.4rem 1.5rem 1.2rem;
+  line-height: 3;
+  padding: 0 1rem;  
   outline: 0;
   width: 100%;
   user-select: none;
   transition: background-color .3s,
     color .3s,
     border-color 1s;
+  white-space: nowrap;
 
   &:hover {
     background-color: rgba(0, 0, 0, .02);
     color: $blue;
     cursor: pointer;
-    border-top: 1px solid rgba(0, 0, 0, .06);
-    border-bottom: 1px solid rgba(0, 0, 0, .07);
+    border-top: $default-border;
+    border-bottom: $default-border;
+
+    &:first-of-type {
+      border-top: 1px solid transparent;      
+    }    
+
+    &:last-of-type {
+      border-bottom: 1px solid transparent;      
+    }    
   }
 
   &.rw-state-selected {
@@ -104,9 +119,20 @@
   outline: 0;
 }
 
-
 .rw-widget {
   outline: 0;
   background-clip: border-box;
   display: inline-block;
+}
+
+.rw-open .rw-input {
+  background-color: rgba(255, 255, 255, .5);
+  color: $body-color;
+  border: 1px solid $black-1;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+
+  &:after {
+    border-color: $body-color;
+  }
 }

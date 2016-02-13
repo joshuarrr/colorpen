@@ -2,6 +2,31 @@ $border: 1px;
 $icon-color: gainsboro;
 $icon-size: 2rem;
 
+.display-options {
+  border-bottom: $default-border;
+  position: fixed;
+  top: $header-height;
+  z-index: 1;
+  background: white;
+  width: 100%;
+  height: $subheader-height;
+  display: flex;
+  padding-left: $page-margin;
+  padding-right: $page-margin;  
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.content {
+  position: relative;
+  top: calc($header-height + $subheader-height);
+}
+
+.groups-wrap {
+  /*margin-top: 15vh;  */
+}
+
 .color-category {
   margin: 3rem 0 1rem;
 
@@ -12,6 +37,7 @@ $icon-size: 2rem;
 
 .color-category-name {
   font-weight: 700;
+  padding-left: $page-margin;
 }
 
 /* Colors  list*/
@@ -35,10 +61,6 @@ $icon-size: 2rem;
   padding: 3rem 5rem 4rem;
   position: relative;
   transform-origin: 50% 0%;
-/*   font: {
-    family: "Fira Mono", sans-serif;
-    size: 1rem;
-  } */
   height: auto;
   line-height: 0;
   text-rendering: GeometricPrecision;
@@ -55,42 +77,6 @@ $icon-size: 2rem;
   }
 }
 
-/* Color animate in */
-@keyframes flipIn {
-  from {
-    animation-timing-function: ease-out;
-    opacity: 0;
-    transform:
-      perspective(300px)
-      rotate3d(1, 0, 0, -180deg)
-      scale(10)
-      translate(0, -500%);
-  }
-
-  to {
-    transform:
-      perspective(300px)
-      rotate3d(1, 0, 0, 0deg)
-      scale(1)
-      translateY(0);
-  }
-}
-
-/* Color animation + stagger */
-$colorClass: "color";
-
-$i: 0;
-@for $i from 0 through 139 {
-  .color- $i {
-
-    $delay: $i * .1 +s;
-
-    /* Intro Animation */
-    animation: flipIn ease both 1s $delay;
-    /* */
-  }
-}
-
 /* Color swatch links */
 .color-swatch-link-title {
   opacity: 0;
@@ -102,11 +88,8 @@ $i: 0;
 }
 
 .swatch-link {
-  @mixin responsive-font-size 1rem, 1.5;
   color: white;
-/*   font: {
-    size: 1.2rem;
-  } */
+  line-height: 2;
   letter-spacing: .1rem;
   margin: 0;
   padding: 0;

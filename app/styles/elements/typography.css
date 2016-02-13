@@ -16,7 +16,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 /* Responsive Font Sizes and Line Heights */
-
+/*
 h1 {
 	@mixin responsive-font-size 1.8rem, 1.7;
 }
@@ -34,7 +34,7 @@ h5 {
 }
 h6 {
 	@mixin responsive-font-size 1.6rem;
-}
+}*/
 
 
 hr {

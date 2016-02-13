@@ -1,12 +1,11 @@
 .site-header {
-  /*backdrop-filter: brightness(1.2) blur(10px);*/
+  align-items: baseline;
   background-color: $lightester-gray;
-  border-bottom: 1px solid $lightest-gray;
+  border-bottom: $default-border;
   display: flex;
-  height: $header-height;;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: baseline;
+  height: $header-height;
   justify-content: space-between;
   padding-left: $page-margin;
   padding-right: $page-margin;
@@ -14,10 +13,6 @@
   top: 0;
   width: 100%;
   z-index: 100;
-
-  @media screen and (max-height: 468px) {
-    height: $header-height * 2;
-  }
 
   &:hover {
     .toggle {
@@ -27,7 +22,6 @@
 }
 
 .site-title {
-  @mixin responsive-font-size 1.9rem, 2;
   margin: 0;
   font-weight: 700;
   letter-spacing: .1rem;
@@ -42,7 +36,6 @@
   align-items: baseline;
   border-bottom: 1px solid $black-1;
   position: fixed;
-  top: 8vh;
   z-index: 2;
   background: rgba(255, 255, 255, .9);
   width: 100%;
@@ -52,7 +45,6 @@
 
 .section-title {
   font-weight: 700;
-  @mixin responsive-font-size 1.4rem, 2;
 }
 
 .section-title,
@@ -68,14 +60,4 @@
   margin: 0;
   letter-spacing: .1rem;
   width: 50vw;
-}
-
-.display-options {
-  @media screen and (min-width: 468px) {
-    margin-top: 0;
-    position: relative;
-    right: 11px;
-    text-align: right;
-    width: 100%;
-  }
 }

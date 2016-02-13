@@ -1,6 +1,8 @@
+$page-margin: 1.5rem;
+
 $trailer: 1rem;
 
 $header-height: 8vh;
-$section-header-height: 6vh;
+$subheader-height: 6vh;
 
-$page-margin: 1.5rem;
+$default-border: 1px solid rgba(0, 0, 0, .05);

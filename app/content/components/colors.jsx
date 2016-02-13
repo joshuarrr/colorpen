@@ -45,42 +45,40 @@ export class Colors extends Component {
 		console.log('colors.jsx config = ' + config);
 
 		return (
-			<section>
-				<header className="section-header">
-					<div className="display-options">
-						<Checkbox
-							key="toggle-names"
-							text="Color names"
-							id="color-names"
-							initialChecked={ this.state.namesChecked }
-							callbackParent={ this.onNameChanged }
-						/>
-						<Checkbox
-							key="toggle-hex"
-							text="Hex codes"
-							id="hex-codes"
-							initialChecked={ this.state.hexChecked }
-							callbackParent={ this.onHexChanged }
-						/>
-						<Checkbox
-							key="toggle-hsl"
-							text="HSL"
-							id="hsl"
-							initialChecked={ this.state.hslChecked }
-							callbackParent={ this.onHslChanged }
-						/>
-						<Checkbox
-							key="toggle-hsv"
-							text="HSV"
-							id="hsv"
-							initialChecked={ this.state.hsvChecked }
-							callbackParent={ this.onHsvChanged }
-						/>
-					</div>
-				</header>
-				<ul className={ 'colors ' + showNames + showHex + showHsl + showHsv }>
-					<ColorSets config={ config } />
-				</ul>
+			<section className="content">
+				<div className="display-options">
+					<Checkbox
+						key="toggle-names"
+						text="Color names"
+						id="color-names"
+						initialChecked={ this.state.namesChecked }
+						callbackParent={ this.onNameChanged }
+					/>
+					<Checkbox
+						key="toggle-hex"
+						text="Hex codes"
+						id="hex-codes"
+						initialChecked={ this.state.hexChecked }
+						callbackParent={ this.onHexChanged }
+					/>
+					<Checkbox
+						key="toggle-hsl"
+						text="HSL"
+						id="hsl"
+						initialChecked={ this.state.hslChecked }
+						callbackParent={ this.onHslChanged }
+					/>
+					<Checkbox
+						key="toggle-hsv"
+						text="HSV"
+						id="hsv"
+						initialChecked={ this.state.hsvChecked }
+						callbackParent={ this.onHsvChanged }
+					/>
+				</div>
+			<ul className={ 'colors ' + showNames + showHex + showHsl + showHsv }>
+				<ColorSets config={ config } />
+			</ul>
 			</section>
 		);
 	}

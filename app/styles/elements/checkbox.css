@@ -3,6 +3,10 @@
   position: relative;
   display: inline-block;
   margin-right: 1rem;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
 
 .checkbox-input,
@@ -19,7 +23,7 @@ input.checkbox-input {
 $checkbox-size: .9rem;
 
 .checkbox-label {
-  @mixin responsive-font-size .5rem, 2, .1rem;
+  /*@mixin responsive-font-size .5rem, 2, .1rem;*/
   padding-left: 1rem;
 
   &:before {
