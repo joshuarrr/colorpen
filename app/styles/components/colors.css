@@ -20,13 +20,6 @@ $icon-size: 2rem;
     opacity $duration;
   transform: translateY(-$header-height);
 
-  &.showing {
-    transform: translateY($header-height);
-    height: $subheader-height;
-    opacity: .9;
-    z-index: 10;
-  }
-
   &:hover {
     opacity: 1;
   }
@@ -34,11 +27,24 @@ $icon-size: 2rem;
   @media (--fablet) {
     justify-content: flex-end;
   }
+
+  /* Show options */
+  .show-display-options & {
+    transform: translateY($header-height);
+    height: $subheader-height;
+    opacity: .9;
+    z-index: 10;
+  }
 }
 
 .content {
   position: relative;
-  top: calc($header-height + $subheader-height);
+  top: calc($header-height);
+  transition: top $duration;
+
+  &.show-display-options {
+    top: calc($header-height + $subheader-height);
+  }
 }
 
 .groups-wrap {

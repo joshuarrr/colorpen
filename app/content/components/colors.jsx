@@ -53,11 +53,11 @@ export class Colors extends Component {
 		/* */ console.log('\n' + '— colors.jsx (render)' + '\n * '
 		/* */ 	+ 'options: ' + options + '\n\n'
 		/* */ );
-		const toggleOptionsClass = options ? 'showing ' : '';
+		const toggleOptionsClass = options ? 'show-display-options ' : '';
 
 		return (
-			<section className="content">
-				<div className={ 'display-options ' + toggleOptionsClass } >
+			<section className={ 'content ' + toggleOptionsClass }>
+				<div className={ 'display-options ' } >
 					<Checkbox
 						key="toggle-names"
 						text="Color names"
@@ -87,9 +87,9 @@ export class Colors extends Component {
 						callbackParent={ this.onHsvChanged }
 					/>
 				</div>
-			<ul className={ 'colors ' + showNames + showHex + showHsl + showHsv }>
-				<ColorSets config={ config } />
-			</ul>
+				<ul className={ 'colors ' + showNames + showHex + showHsl + showHsv }>
+					<ColorSets config={ config } />
+				</ul>
 			</section>
 		);
 	}
