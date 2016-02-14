@@ -79,7 +79,6 @@
 }
 
 .rw-list-option {
-  /*@mixin responsive-font-size .6rem, .6;*/
   background-color: transparent;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
@@ -93,6 +92,8 @@
     color .3s,
     border-color 1s;
   white-space: nowrap;
+  font-size: responsive 12px 14px;
+  font-range: 320px 768px; 
 
   &:hover {
     background-color: rgba(0, 0, 0, .02);
@@ -123,6 +124,9 @@
   outline: 0;
   background-clip: border-box;
   display: inline-block;
+  font-size: responsive 14px 16px;
+  font-range: 320px 768px;  
+  margin-right: 1rem;
 }
 
 .rw-open .rw-input {

@@ -6,7 +6,7 @@
 @import "./components/hints.css";
 
 html {
-  font-size: responsive;
+  font-size: 62.5%;
 }
 
 .root,

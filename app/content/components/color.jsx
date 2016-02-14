@@ -99,9 +99,6 @@ export class Color extends Component {
 						<span className={ 'swatch-text' }>
 							{ copyColor }
 						</span>
-						<span className={ 'test' }>
-
-						</span>
 					</a>
 				</h2>
 

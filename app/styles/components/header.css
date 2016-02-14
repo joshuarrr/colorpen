@@ -1,6 +1,6 @@
 .site-header {
   align-items: baseline;
-  background-color: $lightester-gray;
+  background-color: rgba(255, 255, 255, .95);
   border-bottom: $default-border;
   display: flex;
   flex-direction: row;
@@ -9,10 +9,14 @@
   justify-content: space-between;
   padding-left: $page-margin;
   padding-right: $page-margin;
+  padding-top: 1.5rem;
   position: fixed;
-  top: 0;
   width: 100%;
   z-index: 100;
+
+  @media (--tablet)  {
+    padding-top: 1.3rem;
+  }
 
   &:hover {
     .toggle {
@@ -25,6 +29,9 @@
   margin: 0;
   font-weight: 700;
   letter-spacing: .1rem;
+  font-size: responsive 18px 22px;  
+  font-range: 320px 1440px;
+  margin-right: auto;
 }
 
 .site-nav {
@@ -60,4 +67,19 @@
   margin: 0;
   letter-spacing: .1rem;
   width: 50vw;
+}
+
+.options-toggle {
+  /* WIP */
+  display: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+.gear-icon {
+  width: 16px;
+  position: relative;
+  top: 1px;
+  fill: #333;
 }

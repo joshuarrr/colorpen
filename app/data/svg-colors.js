@@ -1,6 +1,6 @@
 export default [
 	{
-		category: 'Red Colors',
+		category: 'Reds',
 		colors: [
 			{ name: 'LightSalmon' },
 			{ name: 'Salmon' },
@@ -14,7 +14,7 @@ export default [
 		]
 	},
 	{
-		category: 'Orange Colors',
+		category: 'Oranges',
 		colors: [
 			{ name: 'OrangeRed' },
 			{ name: 'Tomato' },
@@ -24,7 +24,7 @@ export default [
 		]
 	},
 	{
-		category: 'Yellow Colors',
+		category: 'Yellows',
 		colors: [
 			{ name: 'Yellow' },
 			{ name: 'LightYellow' },
@@ -40,7 +40,7 @@ export default [
 		]
 	},
 	{
-		category: 'Green Colors',
+		category: 'Greens',
 		colors: [
 			{ name: 'DarkOliveGreen' },
 			{ name: 'Olive' },
@@ -64,7 +64,7 @@ export default [
 		]
 	},
 	{
-		category: 'Blue Colors',
+		category: 'Blues',
 		colors: [
 			{ name: 'LightSteelBlue' },
 			{ name: 'PowderBlue' },
@@ -84,7 +84,7 @@ export default [
 		]
 	},
 	{
-		category: 'Indigo/Violet Colors',
+		category: 'Indigo/Violets',
 		colors: [
 			{ name: 'Lavender' },
 			{ name: 'Thistle' },
@@ -108,7 +108,7 @@ export default [
 		]
 	},
 	{
-		category: 'Pink Colors',
+		category: 'Pinks',
 		colors: [
 			{ name: 'LightPink' },
 			{ name: 'HotPink' },
@@ -118,7 +118,7 @@ export default [
 		]
 	},
 	{
-		category: 'White Colors',
+		category: 'Whites',
 		colors: [
 			{ name: 'White' },
 			{ name: 'Snow' },
@@ -140,7 +140,7 @@ export default [
 		]
 	},
 	{
-		category: 'Gray/Black Colors',
+		category: 'Grays',
 		colors: [
 			{ name: 'Gainsboro' },
 			{ name: 'LightGrey' },
@@ -155,7 +155,7 @@ export default [
 		]
 	},
 	{
-		category: 'Brown Colors',
+		category: 'Browns',
 		colors: [
 			{ name: 'Cornsilk' },
 			{ name: 'BlanchedAlmond' },

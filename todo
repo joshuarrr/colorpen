@@ -1,7 +1,7 @@
 - DOING -
 
-- add checkboxes to an options tooltip on color swatch hover
-- Responsive fonts using viewport units
+≠ add checkboxes to an options tooltip on color swatch hover
+√ Responsive fonts using viewport units
 
 
 
@@ -18,9 +18,9 @@
 - FIX -
 
 - redraw clipboard icon
-- tweak layout padding & spacing
-- adjust font size & weight
-- change subcolors copy
+√ tweak layout padding & spacing
+√ adjust font size & weight
+√ change subcolors copy
 
-- restyle the dropdown menu to behave like a tooltip
-- droptown type adjustment
+≠ restyle the dropdown menu to behave like a tooltip
+√ droptown type adjustment

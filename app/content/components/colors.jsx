@@ -6,7 +6,8 @@ import { ColorSets } from './colorSets';
 /* Colors */
 export class Colors extends Component {
 	static propTypes = {
-		config:	React.PropTypes.string
+		config:	React.PropTypes.string,
+		options: React.PropTypes.bool
 	}
 
 	constructor(props) {

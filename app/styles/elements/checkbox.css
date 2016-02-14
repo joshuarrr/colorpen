@@ -2,7 +2,10 @@
 .checkbox {
   position: relative;
   display: inline-block;
-  margin-right: 1rem;
+
+  @media (--fablet) {
+    margin-right: 1rem;
+  }   
 
   &:last-of-type {
     margin-right: 0;
@@ -23,9 +26,6 @@ input.checkbox-input {
 $checkbox-size: .9rem;
 
 .checkbox-label {
-  /*@mixin responsive-font-size .5rem, 2, .1rem;*/
-  padding-left: 1rem;
-
   &:before {
     border: 1px solid $gray;
     border-radius: .1rem;
@@ -39,6 +39,10 @@ $checkbox-size: .9rem;
     transition: background-color .4s $bounce-in,
       border-color .4s $bounce-in;
   }
+
+  @media (--fablet) {
+    padding-left: 1rem;
+  }  
 }
 
 .checked {
@@ -51,4 +55,7 @@ $checkbox-size: .9rem;
 
 .checkbox-label-text {
   margin-right: .5rem;
+  font-size: responsive 12px 14px;
+  font-range: 320px 768px;
+  white-space: nowrap;  
 }
