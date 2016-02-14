@@ -101,7 +101,7 @@ export class Header extends Component {
 					{ __html: gearIcon }
 				}
 				options={ this.props.options }
-				onMouseEnter={ this.changeHandler }
+				onClick={ this.changeHandler }
 			/>
 			</header>
 		);
