@@ -24,17 +24,31 @@ export class Home extends Component {
 		}
 	}
 
-	render = () => {
-		console.log('options: ' + this.state.options);
+	changeHandler = (options) => {
+		this.setState({
+			options: options
+		});
+	}
 
+	render = () => {
+		/* */
+		console.log(
+			'\n'
+			+ '— home.jsx (render)'
+			+ '\n * '
+			+ 'state.options: '
+			+ this.state.options + '\n\n'
+		);
+		/* */
 		return (
 			<div className="Home">
-				<Header 
-					callbackParent={ this.config } 
+				<Header
+					callbackParent={ this.config }
 					options={ this.state.options }
+					onChange={ this.changeHandler }
 				/>
-				<Colors 
-					config={ this.state.config } 
+				<Colors
+					config={ this.state.config }
 					options={ this.state.options }
 				/>
 			</div>

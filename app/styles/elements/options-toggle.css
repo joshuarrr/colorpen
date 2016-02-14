@@ -1,0 +1,25 @@
+/* Toggle display options */
+.options-toggle {
+  border-radius: $radius;
+  border: 1px solid transparent;
+  padding: .6rem 1rem .6rem 1rem;
+  position: relative;
+  right: -1rem;
+  transition:
+    border-color $duration .2s,
+    background-color $duration .2s,
+    color $duration .2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $form-bg-hover;
+    border: 1px solid $black-1;
+  }
+}
+
+.gear-icon {
+  width: 15px;
+  position: relative;
+  top: 2px;
+  fill: #333;
+}

@@ -7,16 +7,18 @@ import { ColorSets } from './colorSets';
 export class Colors extends Component {
 	static propTypes = {
 		config:	React.PropTypes.string,
-		options: React.PropTypes.bool
+    options: React.PropTypes.bool
 	}
 
 	constructor(props) {
 		super(props);
+
 		this.state = {
 			namesChecked: true,
 			hexChecked: false,
 			hslChecked: false,
-			hsvChecked: false
+			hsvChecked: false,
+			optionss: false
 		};
 	}
 
@@ -43,11 +45,19 @@ export class Colors extends Component {
 		const showHsv = this.state.hsvChecked ? 'show-hsv ' : '';
 
 		const config = this.props.config;
-		console.log('colors.jsx config = ' + config);
+		/* */ console.log('\n' + '— colors.jsx (render)' + '\n * '
+		/* */ 	+ 'config: ' + config + '\n\n'
+		/* */ );
+
+		const options = this.props.options;
+		/* */ console.log('\n' + '— colors.jsx (render)' + '\n * '
+		/* */ 	+ 'options: ' + options + '\n\n'
+		/* */ );
+		const toggleOptionsClass = options ? 'showing ' : '';
 
 		return (
 			<section className="content">
-				<div className="display-options showing">
+				<div className={ 'display-options ' + toggleOptionsClass } >
 					<Checkbox
 						key="toggle-names"
 						text="Color names"

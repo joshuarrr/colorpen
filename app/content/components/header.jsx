@@ -19,7 +19,9 @@ const collections = [{
 
 export class Header extends Component {
 	static propTypes = {
-		callbackParent:	React.PropTypes.any
+		callbackParent:	React.PropTypes.any,
+    options: React.PropTypes.bool,
+    onChange: React.PropTypes.func
 	}
 
 	constructor(props) {
@@ -33,16 +35,41 @@ export class Header extends Component {
 
 	componentDidUpdate = (prevProps, prevState) => {
 		const newValue = this.state.value;
-		// console.log('header newValue = ' + this.state.value);
 
 		return (
 			this.props.callbackParent(newValue)
+		);
+	}
+
+	changeHandler = (e) => {
+		let toggledOpt = this.props.options;
+
+		if (typeof this.props.onChange === 'function') {
+			toggledOpt = !toggledOpt;
+			/* */
+			console.log(
+				'\n'
+				+ '— header.jsx (changeHandler)'
+				+ '\n * '
+				+ 'Hover detected!'
+				+ '\n * '
+				+ 'toggledOpt: ' + toggledOpt + '\n\n'
 			);
+			/* */
+			this.props.onChange(toggledOpt);
+		}
 	}
 
 	render = () => {
-	// const config = 'SVG Colors';
-	// console.log('Header state = ' + this.state.value);
+		/* */
+		console.log(
+			'\n'
+			+ '— header.jsx (render)'
+			+ '\n * '
+			+ 'props.options: '
+			+ this.props.options + '\n\n'
+		);
+		/* */
 
 		const colorSets = collections.map(function gc(collection) {
 			return (
@@ -68,9 +95,13 @@ export class Header extends Component {
 					value => this.setState({ value })
 				}
 			/>
-			<div 
+			<div
 				className={ 'options-toggle ' }
-				dangerouslySetInnerHTML={ { __html: gearIcon } }
+				dangerouslySetInnerHTML={
+					{ __html: gearIcon }
+				}
+				options={ this.props.options }
+				onMouseEnter={ this.changeHandler }
 			/>
 			</header>
 		);

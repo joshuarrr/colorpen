@@ -58,4 +58,5 @@ $checkbox-size: .9rem;
   font-size: responsive 12px 14px;
   font-range: 320px 1440px;
   white-space: nowrap;
+  user-select: none;
 }
