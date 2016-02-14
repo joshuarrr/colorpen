@@ -14,7 +14,7 @@ export class Colors extends Component {
 		super(props);
 		this.state = {
 			namesChecked: true,
-			hexChecked: true,
+			hexChecked: false,
 			hslChecked: false,
 			hsvChecked: false
 		};
@@ -47,7 +47,7 @@ export class Colors extends Component {
 
 		return (
 			<section className="content">
-				<div className="display-options">
+				<div className="display-options showing">
 					<Checkbox
 						key="toggle-names"
 						text="Color names"

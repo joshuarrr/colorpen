@@ -16,7 +16,7 @@ var mediaMinMax = require('postcss-media-minmax');
 var mixins = require('postcss-mixins');
 var nested = require('postcss-nested');
 var browserReporter = require('postcss-browser-reporter');
-var reporter = require('postcss-reporter');
+var responsiveType = require('postcss-responsive-type');
 var simpleExtend = require('postcss-simple-extend');
 var simpleVars = require('postcss-simple-vars');
 var stylelint = require('stylelint');
@@ -86,7 +86,11 @@ var config = {
       stylelint,
       discardComments,
       colorFunction,
-      mixins,
+      mixins({
+        // mixinsFiles: path.join(__dirname, 'app/styles/mixins', '*.css')
+         mixinsDir: path.join(__dirname, 'app/styles/mixins')
+      }),
+      responsiveType,
       simpleExtend,
       customProperties,
       cssVariables,
@@ -99,10 +103,6 @@ var config = {
       autoprefixer(AUTOPREFIXER_BROWSERS),
       browserReporter({
         selector: 'body:before'
-      }),
-      reporter({
-        clearMessages: true,
-        noPlugin: true
       }),
     ];
   }

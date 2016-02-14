@@ -3,26 +3,30 @@ $icon-color: gainsboro;
 $icon-size: 2rem;
 
 .display-options {
-  border-bottom: $default-border;
-  position: fixed;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, .9);
-  width: 100%;
-  display: flex;
-  padding-left: $page-margin;
-  padding-right: $page-margin;  
+  @mixin margin;
   align-items: center;
+  background-color: white;
+  box-shadow: 0  1px 0 0 rgba(0, 0, 0, .125);
+  display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  opacity: 1;
   height: $subheader-height;
-  transition: transform .3s,
-    opacity .3s;
-  transform: translateY($header-height);    
+  justify-content: space-between;
+  opacity: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  transition: transform $duration,
+    opacity $duration;
+  transform: translateY(-$header-height);
 
   &.showing {
-    transform: translateY($header-height);    
+    transform: translateY($header-height);
     height: $subheader-height;
+    opacity: .8;
+    z-index: 10;
+  }
+
+  &:hover {
     opacity: 1;
   }
 
@@ -36,6 +40,10 @@ $icon-size: 2rem;
   top: calc($header-height + $subheader-height);
 }
 
+.groups-wrap {
+  margin-top: 2rem;
+}
+
 .color-category {
   margin: 3rem 0 1rem;
 
@@ -45,12 +53,14 @@ $icon-size: 2rem;
 }
 
 .color-category-name {
-  font-weight: 700;
-  padding-left: $page-margin;
-  padding-bottom: .5rem;
+  @mixin margin;
+  font-range: 320px 1440px;
+  font-size: responsive 14px 16px;
+  font-weight: 400;
+  letter-spacing: .1rem;
   margin-right: .5rem;
-  font-size: responsive 14px 18px;
-  font-range: 320px 1440px;  
+  padding-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 /* Colors  list*/
@@ -63,21 +73,34 @@ $icon-size: 2rem;
   padding-bottom: $border;
 }
 
-/* Color list item*/
+/* Color Swatch */
 .color-swatch {
   backface-visibility: hidden;
   flex: 1 0 320px;
+  line-height: 0;
   list-style-type: none;
   margin-right: $border;
   margin-top: $border;
-  /* mix-blend-mode: multiply; // causes mad flicker in chrome*/
-  padding: 3rem 5rem 3rem;
+  padding: 3rem 5rem 2.5rem;
   position: relative;
-  transform-origin: 50% 0%;
-  height: auto;
-  line-height: 0;
   text-rendering: GeometricPrecision;
+  transform-origin: 50% 0%;
   transition: color $duration;
+
+/* Square Swatches */
+/*
+  &:before {
+    content: '';
+    float: left;
+    padding-top: 100%;
+  }
+*/
+
+  &:hover {
+    .swatch-text {
+      opacity: 1;
+    }
+  }
 
   @media screen and (min-width: 960px) {
     flex: 1 0 300px;
@@ -88,10 +111,10 @@ $icon-size: 2rem;
   }
 }
 
-/* Color swatch links */
+/* Color Swatch Link Title */
 .color-swatch-link-title {
-  display: flex;    
-  align-items: baseline;
+  display: flex;
+  align-items: center;
   opacity: 0;
   margin: 0;
   text-align: left;
@@ -99,22 +122,23 @@ $icon-size: 2rem;
     height $duration $bounce-in;
   width: 100%;
   height: 0;
+  pointer-events: none;
 }
 
 .swatch-link {
+  align-items: center;
   color: white;
-  line-height: 1.7;
+  display: inline-block;
   letter-spacing: .1rem;
+  line-height: 1.7;
   margin: 0;
   padding: 0;
-  display: inline-block;
   position: relative;
-  /*text-shadow: 0px 1px 1px rgba(0, 0, 0, .3);*/
   transition: background-color $duration;
   width: 100%;
-  align-items: center;
+  z-index: 1;
 
-  &:hover{
+  &:hover {
     color: white;
     cursor: pointer;
 
@@ -129,10 +153,13 @@ $icon-size: 2rem;
 }
 
 .swatch-text {
-  font-size: responsive 12px 16px;
+  font-size: responsive 12px 14px;
   font-range: 320px 768px;
+  font-weight: normal;
   text-shadow: $default-text-shadow;
-  white-space: nowrap; 
+  white-space: nowrap;
+  opacity: .9;
+  transition: opacity $duration;
 }
 
 .show-names .color-name,
@@ -142,7 +169,8 @@ $icon-size: 2rem;
   opacity: 1;
 
   &.color-swatch-link-title {
-    height: 4rem;
+    height: 3rem;
+    pointer-events: auto;
   }
 }
 
@@ -190,4 +218,3 @@ $icon-size: 2rem;
   font-size: 1px;
   opacity: 0;
 }
-

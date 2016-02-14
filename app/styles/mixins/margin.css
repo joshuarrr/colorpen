@@ -1,0 +1,14 @@
+@define-mixin margin
+	$x: $page-margin {
+    $margin: calc($x * 2);
+    padding-left: $margin;
+    padding-right: $margin;
+
+/*
+	@media (--tablet) {
+  	$margin: calc($x * 3);
+    padding-left: $margin;
+    padding-right: $margin;
+  }
+*/
+}
