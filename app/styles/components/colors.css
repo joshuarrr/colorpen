@@ -14,10 +14,11 @@ $icon-size: 2rem;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  opacity: 0;
-  height: 0;
+  opacity: 1;
+  height: $subheader-height;
   transition: transform .3s,
     opacity .3s;
+  transform: translateY($header-height);    
 
   &.showing {
     transform: translateY($header-height);    
@@ -32,7 +33,7 @@ $icon-size: 2rem;
 
 .content {
   position: relative;
-  top: $header-height;
+  top: calc($header-height + $subheader-height);
 }
 
 .color-category {
