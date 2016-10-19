@@ -20,8 +20,8 @@ const collections = [{
 export class Header extends Component {
 	static propTypes = {
 		callbackParent:	React.PropTypes.any,
-    options: React.PropTypes.bool,
-    onChange: React.PropTypes.func
+		options: React.PropTypes.bool,
+		onChange: React.PropTypes.func
 	}
 
 	constructor(props) {
