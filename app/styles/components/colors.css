@@ -59,15 +59,9 @@ $icon-size: 2rem;
   }
 }
 
+
 .color-category-name {
   @mixin margin;
-  font-range: 320px 1440px;
-  font-size: responsive 14px 16px;
-  font-weight: 400;
-  letter-spacing: .1rem;
-  margin-right: .5rem;
-  padding-bottom: 1rem;
-  text-transform: uppercase;
 }
 
 /* Colors  list*/

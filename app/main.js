@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import { Home } from './content/home';
 import { Info } from './content/info';
 import { About } from './content/about';
+import store from './store';
 
 export class App extends Component {
 	static propTypes = {
@@ -19,7 +20,7 @@ export class App extends Component {
 	}
 }
 
-render((
+const instance = render((
 	// createBrowserHistory removes ULR cruft but eliminates persistent state
 	// See: http://rackt.org/history/stable/HashHistoryCaveats.html
 	<Router history={ createBrowserHistory({ queryKey: false }) }>
@@ -31,3 +32,5 @@ render((
 		</Route>
 	</Router>
 	), document.getElementById('root'));
+
+store.register(() => instance.forceUpdate());

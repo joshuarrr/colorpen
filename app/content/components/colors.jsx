@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Checkbox } from './checkbox';
 import { ColorSets } from './colorSets';
+import { Schemer } from './schemer';
 
 /* Colors */
 export class Colors extends Component {
@@ -17,8 +18,7 @@ export class Colors extends Component {
 			namesChecked: true,
 			hexChecked: false,
 			hslChecked: false,
-			hsvChecked: false,
-			optionss: false
+			hsvChecked: false
 		};
 	}
 
@@ -87,6 +87,7 @@ export class Colors extends Component {
 						callbackParent={ this.onHsvChanged }
 					/>
 				</div>
+				<Schemer />
 				<ul className={ 'colors ' + showNames + showHex + showHsl + showHsv }>
 					<ColorSets config={ config } />
 				</ul>

@@ -1,0 +1,39 @@
+.schemer {
+	display: flex;
+	top: 2rem;
+  position: relative;
+  flex-direction: column;
+}
+
+.schemer_wrap {
+	display: flex;
+	flex-direction: row;
+	@mixin margin;
+}
+
+.schemes > div:not(:first-of-type) {
+	margin-top: 2rem;
+}
+
+.schemer-title {
+	display: none;
+}
+
+.schemer-swatches {
+	display: flex;
+  flex-direction: row;
+}
+
+.schemer-swatch {
+	width: 7vw;
+	height: 7vh;
+}
+
+.initial-color {
+	/* @mixin margin; */
+	width: 50%;
+}
+
+.complement {
+	margin-top: 2rem;
+}

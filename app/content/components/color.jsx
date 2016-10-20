@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import tinyColor from 'tinyColor2';
+import store from '../../store';
 
 /* Color */
 export class Color extends Component {
@@ -24,7 +25,14 @@ export class Color extends Component {
 
 		const isClicked = true;
 		this.setState({ clicked: isClicked });
-		console.log('clicked ' + this.state.clicked);
+		// console.log('clicked ' + this.state.clicked);
+
+		// send the clicked color to the store
+		// console.log('* currentColor = ' + this.state.value + '\n');
+		store.currentColor = this.state.value;
+
+		console.log('* store currentColor = ' + store.currentColor + '\n');
+
 
 		try {
 			const successful = document.execCommand('copy');

@@ -3,6 +3,7 @@
 @import "@elements.css";
 @import "./components/header.css";
 @import "./components/colors.css";
+@import "./components/schemer.css";
 @import "./components/hints.css";
 
 html {
@@ -22,4 +23,8 @@ body {
 
 main {
     padding: 0 $page-margin $page-margin;
+}
+
+.hidden {
+	display: none;
 }
