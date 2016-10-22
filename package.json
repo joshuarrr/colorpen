@@ -78,7 +78,9 @@
   },
   "dependencies": {
     "express": "^4.13.3",
+    "postcss-functions": "^2.1.1",
     "react": "^0.14.0",
+    "react-color": "^2.4.0",
     "react-dom": "^0.14.0",
     "react-helmet": "^2.1.1"
   },

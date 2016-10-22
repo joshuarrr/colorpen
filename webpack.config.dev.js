@@ -12,6 +12,7 @@ var cssVariables = require('postcss-css-variables');
 var customMedia = require('postcss-custom-media');
 var customProperties = require('postcss-custom-properties');
 var discardComments = require('postcss-discard-comments');
+var functions = require('postcss-functions');
 var mediaMinMax = require('postcss-media-minmax');
 var mixins = require('postcss-mixins');
 var nested = require('postcss-nested');
@@ -91,7 +92,7 @@ var config = {
       mixins({
         // mixinsFiles: path.join(__dirname, 'app/styles/mixins', '*.css')
          mixinsDir: path.join(__dirname, 'app/styles/mixins')
-      }),      
+      }),
       responsiveType,
       simpleExtend,
       customProperties,
@@ -103,6 +104,9 @@ var config = {
       calc,
       conditionals,
       autoprefixer(AUTOPREFIXER_BROWSERS),
+      functions({
+        glob: path.join(__dirname, 'app/styles/functions', '*.js')
+      }),
       browserReporter({
         selector: 'body:before'
       }),

@@ -11,6 +11,7 @@ var conditionals = require('postcss-conditionals');
 var cssVariables = require('postcss-css-variables');
 var customMedia = require('postcss-custom-media');
 var customProperties = require('postcss-custom-properties');
+var functions = require('postcss-functions');
 var discardComments = require('postcss-discard-comments');
 var mediaMinMax = require('postcss-media-minmax');
 var mixins = require('postcss-mixins');
@@ -100,6 +101,9 @@ var config = {
       nested,
       calc,
       conditionals,
+      functions({
+        glob: path.join(__dirname, 'app/styles/functions', '*.js')
+      }),
       autoprefixer(AUTOPREFIXER_BROWSERS),
       browserReporter({
         selector: 'body:before'

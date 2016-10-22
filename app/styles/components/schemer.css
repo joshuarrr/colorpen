@@ -1,8 +1,15 @@
 .schemer {
 	display: flex;
-	top: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
   position: relative;
   flex-direction: column;
+
+	.color-swatch {
+  	width: 100px;
+  	border: 1px solid white;
+  	margin-right: -1px;
+  }
 }
 
 .schemer_wrap {
@@ -24,16 +31,24 @@
   flex-direction: row;
 }
 
-.schemer-swatch {
-	width: 7vw;
-	height: 7vh;
-}
-
 .initial-color {
 	/* @mixin margin; */
 	width: 50%;
 }
 
 .complement {
+	margin-top: 2rem;
+}
+
+/* React-color */
+.chrome-picker {
+	box-shadow: none !important;
+	margin-top: 2rem;
+	margin-right: 2rem;
+	border: 1px solid #e7e7e7;
+}
+
+.random-scheme-generator {
+	padding: 1rem;
 	margin-top: 2rem;
 }

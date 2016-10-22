@@ -31,7 +31,7 @@ export class Home extends Component {
 	}
 
 	render = () => {
-		/* */
+		/*
 		console.log(
 			'\n'
 			+ '— home.jsx (render)'

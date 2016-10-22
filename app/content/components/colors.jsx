@@ -45,14 +45,18 @@ export class Colors extends Component {
 		const showHsv = this.state.hsvChecked ? 'show-hsv ' : '';
 
 		const config = this.props.config;
-		/* */ console.log('\n' + '— colors.jsx (render)' + '\n * '
-		/* */ 	+ 'config: ' + config + '\n\n'
-		/* */ );
+		/*
+		console.log('\n' + '— colors.jsx (render)' + '\n * '
+			+ 'config: ' + config + '\n\n'
+		);
+		/* */
 
 		const options = this.props.options;
-		/* */ console.log('\n' + '— colors.jsx (render)' + '\n * '
-		/* */ 	+ 'options: ' + options + '\n\n'
-		/* */ );
+		/*
+		console.log('\n' + '— colors.jsx (render)' + '\n * '
+			+ 'options: ' + options + '\n\n'
+		);
+		/* */
 		const toggleOptionsClass = options ? 'show-display-options ' : '';
 
 		return (

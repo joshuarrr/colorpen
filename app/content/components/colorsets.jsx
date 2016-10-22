@@ -48,7 +48,7 @@ export class ColorSets extends Component {
 					>
 						{ group.category }
 					</h2>
-					<ul className="colors">
+					<ul className="categorized-colors">
 						{ colors }
 					</ul>
 				</li>

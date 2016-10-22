@@ -18,7 +18,7 @@ const store = window.store = {
 	get analogous() {
 		return tinyColor(this._currentColor).analogous();
 	},
-	get mono() {
+	get monochrome() {
 		return tinyColor(this._currentColor).monochromatic();
 	},
 	get splitcomplement() {

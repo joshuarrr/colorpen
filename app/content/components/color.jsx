@@ -28,11 +28,9 @@ export class Color extends Component {
 		// console.log('clicked ' + this.state.clicked);
 
 		// send the clicked color to the store
-		// console.log('* currentColor = ' + this.state.value + '\n');
-		store.currentColor = this.state.value;
-
-		console.log('* store currentColor = ' + store.currentColor + '\n');
-
+		const clickedAlpha = tinyColor(this.state.value).toHsvString();
+		store.currentColor = clickedAlpha;
+		console.log('* clickedAlpha = ' + clickedAlpha + '\n');
 
 		try {
 			const successful = document.execCommand('copy');
@@ -51,15 +49,15 @@ export class Color extends Component {
 	render = () => {
 		const clickedClass = this.state.clicked ? ' clicked' : '';
 		const value = this.state.value;
-		const swatchColor = {
-			backgroundColor: this.props.color
-		};
 		const isClicked = this.state.clicked ? true : false;
 		const copyColor = this.props.color;
 		const copyHex =	tinyColor(copyColor).toHexString();
 		const copyHsl =	tinyColor(copyColor).toHslString();
 		const copyHsv =	tinyColor(copyColor).toHsvString();
 		const readable = tinyColor.isReadable(copyColor);
+		const swatchColor = {
+			backgroundColor: copyHsl
+		};
 		const copyIcon = `
 			<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 45.9' enable-background='new 0 0 36 45.9'>
 			<path class='path' fill='white' d='M17 0c1.7 0 3 1.3 3 3h1c1.3 0 2 1 2 1l2 2c.9.9 2 1 2 1 .6 0 1 .4 1 1s-.4 1-1 1h-20c-.6 0-1-.4-1-1s.4-1 1-1c0 0 1.1-.1 2-1l2-2s.8-1 2-1h1c0-1.7 1.3-3 3-3'/>

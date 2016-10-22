@@ -46,7 +46,7 @@ export class Header extends Component {
 
 		if (typeof this.props.onChange === 'function') {
 			toggledOpt = !toggledOpt;
-			/* */
+			/*
 			console.log(
 				'\n'
 				+ '— header.jsx (changeHandler)'
@@ -61,7 +61,7 @@ export class Header extends Component {
 	}
 
 	render = () => {
-		/* */
+		/*
 		console.log(
 			'\n'
 			+ '— header.jsx (render)'

@@ -59,25 +59,11 @@ $icon-size: 2rem;
   }
 }
 
-
 .color-category-name {
   @mixin margin;
 }
 
-/* Colors  list*/
-.colors {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  padding-left: $border;
-  padding-bottom: $border;
-}
-
-/* Color Swatch */
 .color-swatch {
-  backface-visibility: hidden;
-  flex: 1 0 320px;
   line-height: 0;
   list-style-type: none;
   margin-right: $border;
@@ -87,28 +73,45 @@ $icon-size: 2rem;
   text-rendering: GeometricPrecision;
   transform-origin: 50% 0%;
   transition: color $duration;
+}
 
-/* Square Swatches */
-/*
-  &:before {
-    content: '';
-    float: left;
-    padding-top: 100%;
-  }
-*/
+/* Colors list*/
+.categorized-colors {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  padding-left: $border;
+  padding-bottom: $border;
 
-  &:hover {
-    .swatch-text {
-      opacity: 1;
+  /* Color Swatch */
+  .color-swatch {
+    backface-visibility: hidden;
+    flex: 1 0 320px;
+
+
+  /* Square Swatches */
+  /*
+    &:before {
+      content: '';
+      float: left;
+      padding-top: 100%;
     }
-  }
+  */
 
-  @media screen and (min-width: 960px) {
-    flex: 1 0 300px;
-  }
+    &:hover {
+      .swatch-text {
+        opacity: 1;
+      }
+    }
 
-  @media screen and (min-width: 1280px) {
-    flex: 1 0 256px;
+    @media screen and (min-width: 960px) {
+      flex: 1 0 300px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      flex: 1 0 256px;
+    }
   }
 }
 
