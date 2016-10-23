@@ -73,25 +73,14 @@ export class Schemer extends Component {
 				<h2 className="schemer-title">Color Schemer</h2>
 				<div className="schemer_wrap">
 					<div className="initial-color">
-							<h2>current color
-							{
-								store.currentColor &&
-								<span>: { store.currentColor }</span>
-							}
-							</h2>
+							<h2>current color</h2>
 						<Color
 							color={	store.currentColor }
 							id={ store.currentColor }
 							key={ 'color-' + store.currentColor }
 						/>
 						<div className="complement">
-							<h2>complement
-							{
-								hasName &&
-								<span>: { hasName }</span>
-							}
-							</h2>
-
+							<h2>complement</h2>
 							<p className="hidden">Complementary colors are pairs of colors which, when combined, cancel each other out. This means that when combined, they produce a grey-scale color like white or black.[1] When placed next to each other, they create the strongest contrast for those particular two colors. Due to this striking color clash, the term opposite colors is often considered more appropriate than "complementary colors".</p>
 							<div className="schemer-swatches">
 								<Color

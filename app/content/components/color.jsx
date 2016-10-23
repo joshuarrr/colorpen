@@ -54,8 +54,8 @@ export class Color extends Component {
 		const clickedClass = this.state.clicked ? ' clicked' : '';
 		const value = this.state.value;
 		const isClicked = this.state.clicked ? true : false;
-		// const copyColor = this.props.color;
-		const copyColor =	tinyColor(this.props.color).toName();
+		const copyColor = this.props.color;
+		const copyColorName =	tinyColor(this.props.color).toName();
 		const copyHex =	tinyColor(this.props.color).toHexString();
 		const copyHsl =	tinyColor(this.props.color).toHslString();
 		const copyHsv =	tinyColor(this.props.color).toHsvString();
@@ -109,7 +109,7 @@ export class Color extends Component {
 							/>
 						}
 						<span className={ 'swatch-text' }>
-							{ copyColor }
+							{ copyColorName }
 						</span>
 					</a>
 				</h2>
