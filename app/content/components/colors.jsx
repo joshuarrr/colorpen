@@ -16,7 +16,7 @@ export class Colors extends Component {
 
 		this.state = {
 			namesChecked: true,
-			hexChecked: false,
+			hexChecked: true,
 			hslChecked: false,
 			hsvChecked: false
 		};
@@ -91,10 +91,12 @@ export class Colors extends Component {
 						callbackParent={ this.onHsvChanged }
 					/>
 				</div>
-				<Schemer />
-				<ul className={ 'colors ' + showNames + showHex + showHsl + showHsv }>
-					<ColorSets config={ config } />
-				</ul>
+				<div className={ 'colors ' + showNames + showHex + showHsl + showHsv }>
+					<Schemer />
+					<ul>
+						<ColorSets config={ config } />
+					</ul>
+				</div>
 			</section>
 		);
 	}

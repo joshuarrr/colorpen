@@ -4,12 +4,6 @@
 	padding-bottom: 2rem;
   position: relative;
   flex-direction: column;
-
-	.color-swatch {
-  	width: 100px;
-  	border: 1px solid white;
-  	margin-right: -1px;
-  }
 }
 
 .schemer_wrap {
@@ -29,11 +23,20 @@
 .schemer-swatches {
 	display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+
+	.color-swatch {
+  	min-width: 150px;
+  	border: 1px solid white;
+  	margin-right: -1px;
+  	flex: 1;
+  }
 }
 
 .initial-color {
 	/* @mixin margin; */
 	width: 50%;
+	margin-right: 2rem;
 }
 
 .complement {
@@ -48,7 +51,16 @@
 	border: 1px solid #e7e7e7;
 }
 
+/* random button */
 .random-scheme-generator {
 	padding: 1rem;
 	margin-top: 2rem;
+}
+
+/* Set current button */
+.set-current-color {
+	background: transparent;
+	padding: 1rem;
+	border: 1px solid;
+	border-radius: .3rem;
 }

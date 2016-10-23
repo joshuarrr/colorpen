@@ -19,8 +19,14 @@ export class Schemer extends Component {
 
 	// react-color colorpicker
 	handleChangeComplete = (color) => {
-		console.log('* color.hex = ' + tinyColor(color.hex).setAlpha() + '\n');
-		store.currentColor = tinyColor(color.hex).toHslString();
+		// console.log('* color.hex = ' + tinyColor(color.hex).setAlpha() + '\n');
+		// store.currentColor = tinyColor(color.hex).toName();
+		// console.log('* store.currentColor = ' + store.currentColor + '\n');
+		if (tinyColor(color.hex).toName()) {
+			store.currentColor = tinyColor(color.hex).toName();
+		} else {
+			store.currentColor = tinyColor(color.hex).toHexString();
+		}
 	};
 
 	// Random scheme generator
@@ -37,35 +43,55 @@ export class Schemer extends Component {
 		// console.log('* firstColor = ' + firstColor + '\n');
 		const schemerSwatches = generatedColors.map(t =>
 			<Color
-				color={	t.toHslString() }
-				id={ t.toHslString() }
+				color={	t.toHexString() }
+				id={ t.toHexString() }
 				key={ 'color-' + t }
+				isSchemer
+				className="generated-color"
 			/>
 		);
 		return (
-			<div className="schemer-swatches">
+			<span className="schemer-swatches">
+				<Color
+					color={	firstColor.toHexString() }
+					id={ firstColor.toHexString() }
+					key={ 'color-' + firstColor }
+					className="first-color"
+					isSchemer
+				/>
 				{ schemerSwatches }
-			</div>
+			</span>
 		);
 	}
 
 	render = () => {
+		const hasName = store.complement.toName();
+		// const currentName = store.currentColortoName();
 		return (
 			<section
-				className={ 'schemer ' }
-			>
+				className={ 'schemer ' }>
 				<h2 className="schemer-title">Color Schemer</h2>
 				<div className="schemer_wrap">
 					<div className="initial-color">
-
-						<h3>current color: { store.currentColor }</h3>
+							<h2>current color
+							{
+								store.currentColor &&
+								<span>: { store.currentColor }</span>
+							}
+							</h2>
 						<Color
 							color={	store.currentColor }
 							id={ store.currentColor }
 							key={ 'color-' + store.currentColor }
 						/>
 						<div className="complement">
-							<h3>complement: { store.complement.toName() }</h3>
+							<h2>complement
+							{
+								hasName &&
+								<span>: { hasName }</span>
+							}
+							</h2>
+
 							<p className="hidden">Complementary colors are pairs of colors which, when combined, cancel each other out. This means that when combined, they produce a grey-scale color like white or black.[1] When placed next to each other, they create the strongest contrast for those particular two colors. Due to this striking color clash, the term opposite colors is often considered more appropriate than "complementary colors".</p>
 							<div className="schemer-swatches">
 								<Color
@@ -96,22 +122,22 @@ export class Schemer extends Component {
 						</div>
 						<div className="mono">
 							<h2>monochromatic</h2>
-							<p>Monochromatic colors are all the colors (tints, tones, and shades) of a single hue. Example of a monochromatic color scheme. Monochromatic color schemes are derived from a single base hue and extended using its shades, tones and tints.</p>
-							{ this.renderScheme('monochrome') }
+							<p>Monochromatic colors are all the colors (tints, tones, and shades) of a single hue. Monochromatic color schemes are derived from a single base hue and extended using its shades, tones and tints.</p>
+							{ this.renderScheme('alterchrome') }
 						</div>
 						<div className="split-comp">
 							<h2>split-complementary</h2>
-							<p>The split-complementary (also called Compound Harmony) color scheme is a variation of the complementary color scheme. In addition to the base color, it uses the two "Analogous" colors adjacent to its complement. Split-complementary color scheme has the same strong visual contrast as the complementary color scheme, but has less pressure.</p>
+							<p>The split-complementary (also called Compound Harmony) color scheme is a variation of the complementary color scheme. In addition to the base color, it uses the two "Analogous" colors adjacent to its complement. Split-complementary color schemes have the same strong visual contrast as complementary color schemes, but with less pressure.</p>
 							{ this.renderScheme('splitcomplement') }
 						</div>
 						<div className="triad">
 							<h2>triadic</h2>
-							<p>The triadic color scheme uses three colors equally spaced around the color wheel. The easiest way to place them on the wheel is by using a triangle of equal sides. Triadic color schemes tend to be quite vibrant, even when using pale or unsaturated versions of hues, offers a higher degree of contrast while at the same time retains the color harmony. This scheme is very popular among artists because it offers strong visual contrast while retaining balance, and color richness. The triadic scheme is not as contrasting as the complementary scheme, but it is easier to accomplish balance and harmony with these colors.</p>
+							<p>The triadic color scheme uses three colors equally spaced around the color wheel. Triadic color schemes tend to be quite vibrant, even when using pale or unsaturated versions of hues. Triadic color schemes offer a higher degree of contrast while at the same time retaining color harmony. This scheme is very popular among artists because it offers strong visual contrast while retaining balance, and color richness. The triadic scheme is not as contrasting as the complementary scheme, which makes it easier to accomplish balance and harmony with these colors.</p>
 							{ this.renderScheme('triad') }
 						</div>
 						<div className="tetrad">
 							<h2>tetradic</h2>
-							<p>The tetradic (double complementary) colors scheme is the richest of all the schemes because it uses four colors arranged into two complementary color pairs. This scheme is hard to harmonize and requires a color to be dominant or subdue the colors.; if all four colors are used in equal amounts, the scheme may look unbalanced.</p>
+							<p>The tetradic (double complementary) colors scheme uses four colors arranged into two complementary color pairs. This scheme can be more difficult to harmonize and typically requires one color to be dominant with subdued companion colors. If all four colors are used in equal amounts, the scheme may look intense or unbalanced.</p>
 							{ this.renderScheme('tetrad') }
 						</div>
 					</div>

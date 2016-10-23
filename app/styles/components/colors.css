@@ -16,7 +16,7 @@ $icon-size: 2rem;
   position: fixed;
   width: 100%;
   z-index: 1;
-  transition: transform $duration,
+  transition: transform .1s,
     opacity $duration;
   transform: translateY(-$header-height);
 
@@ -42,9 +42,9 @@ $icon-size: 2rem;
   top: calc($header-height);
   transition: top $duration;
 
-  &.show-display-options {
+/*   &.show-display-options {
     top: calc($header-height + $subheader-height);
-  }
+  } */
 }
 
 .groups-wrap {
@@ -89,16 +89,6 @@ $icon-size: 2rem;
     backface-visibility: hidden;
     flex: 1 0 320px;
 
-
-  /* Square Swatches */
-  /*
-    &:before {
-      content: '';
-      float: left;
-      padding-top: 100%;
-    }
-  */
-
     &:hover {
       .swatch-text {
         opacity: 1;
@@ -123,9 +113,11 @@ $icon-size: 2rem;
   margin: 0;
   text-align: left;
   transition: opacity $duration,
+    padding $duration,
     height $duration $bounce-in;
   width: 100%;
   height: 0;
+  padding: 0;
   pointer-events: none;
 }
 
@@ -175,6 +167,7 @@ $icon-size: 2rem;
   &.color-swatch-link-title {
     height: 3rem;
     pointer-events: auto;
+    padding: 1rem;
   }
 }
 

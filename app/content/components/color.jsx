@@ -19,18 +19,22 @@ export class Color extends Component {
 		this.setState({ value: type });
 	}
 
+	setSchemeColorToCurrent = () => {
+		// send the clicked color to the store
+		store.currentColor = this.state.value;
+	}
+
 	handleClick = () => {
 		const copyTextarea = ReactDOM.findDOMNode(this.refs.colorText);
 		copyTextarea.select();
-
 		const isClicked = true;
 		this.setState({ clicked: isClicked });
-		// console.log('clicked ' + this.state.clicked);
 
 		// send the clicked color to the store
-		const clickedAlpha = tinyColor(this.state.value).toHsvString();
-		store.currentColor = clickedAlpha;
-		console.log('* clickedAlpha = ' + clickedAlpha + '\n');
+		// if it's not a schemerColor
+		if (!this.props.isSchemer) {
+			store.currentColor = this.state.value;
+		}
 
 		try {
 			const successful = document.execCommand('copy');
@@ -50,10 +54,12 @@ export class Color extends Component {
 		const clickedClass = this.state.clicked ? ' clicked' : '';
 		const value = this.state.value;
 		const isClicked = this.state.clicked ? true : false;
-		const copyColor = this.props.color;
-		const copyHex =	tinyColor(copyColor).toHexString();
-		const copyHsl =	tinyColor(copyColor).toHslString();
-		const copyHsv =	tinyColor(copyColor).toHsvString();
+		// const copyColor = this.props.color;
+		const copyColor =	tinyColor(this.props.color).toName();
+		const copyHex =	tinyColor(this.props.color).toHexString();
+		const copyHsl =	tinyColor(this.props.color).toHslString();
+		const copyHsv =	tinyColor(this.props.color).toHsvString();
+		const copyRgb =	tinyColor(this.props.color).toRgbString();
 		const readable = tinyColor.isReadable(copyColor);
 		const swatchColor = {
 			backgroundColor: copyHsl
@@ -72,16 +78,17 @@ export class Color extends Component {
 				<path class='path st0' stroke='white' d='M9.2 27.2l6.3 5 10.3-15.1'/>
 			</svg>
 		`;
-		const styles = readable ? { color: 'DarkSlateGray' } : { color: 'white' };
+		const readableText = readable ? { color: 'DarkSlateGray' } : { color: 'white' };
 		const light = readable ? 'light' : '';
 		return (
 			<li
 				className={ 'color color-swatch color-' + this.props.id + clickedClass }
 				style={ swatchColor }
+				onMouseEnter={ evt => this.setValue(copyColor) }
 			>
 				<h2 className={ 'color-swatch-link-title color-name' }>
 					<a
-						style={ styles }
+						style={ readableText }
 						className={ 'swatch-link' + clickedClass }
 						onMouseEnter={ evt => this.setValue(copyColor) }
 						onMouseLeave={ this.handleMouseLeave }
@@ -90,7 +97,6 @@ export class Color extends Component {
 						{
 							isClicked ||
 							<div
-
 								className={ 'copy-icon ' + light }
 								dangerouslySetInnerHTML={ { __html: copyIcon } }
 							/>
@@ -110,7 +116,7 @@ export class Color extends Component {
 
 				<h2 className={ 'color-swatch-link-title hex-code' }>
 					<a
-						style={ styles }
+						style={ readableText }
 						className={ 'swatch-link' + clickedClass }
 						onMouseEnter={ evt => this.setValue(copyHex) }
 						onMouseLeave={ this.handleMouseLeave }
@@ -138,7 +144,7 @@ export class Color extends Component {
 
 				<h2 className={ 'color-swatch-link-title hsl-code' }>
 					<a
-						style={ styles }
+						style={ readableText }
 						className={ 'swatch-link' + clickedClass }
 						onMouseEnter={ evt => this.setValue(copyHsl) }
 						onMouseLeave={ this.handleMouseLeave }
@@ -166,7 +172,7 @@ export class Color extends Component {
 
 				<h2 className={ 'color-swatch-link-title hsv-code' }>
 					<a
-						style={ styles }
+						style={ readableText }
 						className={ 'swatch-link' + clickedClass }
 						onMouseEnter={ evt => this.setValue(copyHsv) }
 						onMouseLeave={ this.handleMouseLeave }
@@ -191,6 +197,17 @@ export class Color extends Component {
 						</span>
 					</a>
 				</h2>
+
+				{
+					this.props.isSchemer &&
+					<button className="set-current-color"
+						href="#"
+						onClick={ this.setSchemeColorToCurrent }
+						style={ readableText }
+					>
+						set current color
+					</button>
+				}
 
 				<textarea
 					className={ 'js-copytextarea' }

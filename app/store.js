@@ -21,6 +21,19 @@ const store = window.store = {
 	get monochrome() {
 		return tinyColor(this._currentColor).monochromatic();
 	},
+	// get alterchrome() {
+	// 	const scheme = tinyColor(this._currentColor).monochromatic();
+	// 	const [firstColor, ...generatedColors] = scheme;
+	// 	const reversedMono = generatedColors.reverse();
+	// 	reversedMono.unshift(firstColor);
+	// 	return reversedMono;
+	// },
+	get alterchrome() {
+		const scheme = tinyColor(this._currentColor).monochromatic();
+		const first = scheme.shift();
+		return [first, ...scheme.reverse()];
+	},
+
 	get splitcomplement() {
 		return tinyColor(this._currentColor).splitcomplement();
 	},
